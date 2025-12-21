@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
 
 const footerLinks = {
   column1: [
@@ -22,50 +22,48 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms and Conditions", href: "/terms" },
   ],
-};
+}
 
 const socialLinks = [
   { icon: "/icons/facebook.svg", href: "#", label: "Facebook" },
   { icon: "/icons/Instagram.svg", href: "#", label: "Instagram" },
   { icon: "/icons/Linkedin.svg", href: "#", label: "LinkedIn" },
   { icon: "/icons/youtube.svg", href: "#", label: "YouTube" },
-];
+]
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("")
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
+    e.preventDefault()
+    setStatus("loading")
 
     try {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (res.ok) {
-        setStatus("success");
-        setMessage(data.message);
-        setEmail("");
+        setStatus("success")
+        setMessage(data.message)
+        setEmail("")
       } else {
-        setStatus("error");
-        setMessage(data.error);
+        setStatus("error")
+        setMessage(data.error)
       }
     } catch {
-      setStatus("error");
-      setMessage("Something went wrong");
+      setStatus("error")
+      setMessage("Something went wrong")
     }
 
-    setTimeout(() => setStatus("idle"), 3000);
-  };
+    setTimeout(() => setStatus("idle"), 3000)
+  }
 
   return (
     <footer className="bg-linear-to-b from-[#B2EBF2] to-[#80DEEA]">
@@ -75,7 +73,7 @@ export function Footer() {
           {/* Logo & Contact Info */}
           <div className="space-y-6">
             <Image
-              src="/icons/d-logo.svg"
+              src="/icons/logo.svg"
               alt="Badran Hospital"
               width={180}
               height={90}
@@ -88,43 +86,17 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 group"
               >
-                <Image
-                  src="/icons/icon-12.svg"
-                  alt="Location"
-                  width={20}
-                  height={20}
-                  className="mt-1 shrink-0"
-                />
+                <Image src="/icons/icon-12.svg" alt="Location" width={20} height={20} className="mt-1 shrink-0" />
                 <span className="text-[#1A3B5C] leading-relaxed group-hover:text-[#0097A7] transition-colors">
                   123 Dokki Street, Mohandessein, Egypt.
                 </span>
               </Link>
-              <Link
-                href="tel:1234567890"
-                className="flex items-center gap-3 group"
-              >
-                <Image
-                  src="/icons/icon-13.svg"
-                  alt="Phone"
-                  width={20}
-                  height={20}
-                  className="shrink-0"
-                />
-                <span className="text-[#1A3B5C] group-hover:text-[#0097A7] transition-colors">
-                  123-456-7890
-                </span>
+              <Link href="tel:1234567890" className="flex items-center gap-3 group">
+                <Image src="/icons/icon-13.svg" alt="Phone" width={20} height={20} className="shrink-0" />
+                <span className="text-[#1A3B5C] group-hover:text-[#0097A7] transition-colors">123-456-7890</span>
               </Link>
-              <Link
-                href="mailto:info@badranhospital.com"
-                className="flex items-center gap-3 group"
-              >
-                <Image
-                  src="/icons/icon-18.svg"
-                  alt="Email"
-                  width={20}
-                  height={20}
-                  className="shrink-0"
-                />
+              <Link href="mailto:info@badranhospital.com" className="flex items-center gap-3 group">
+                <Image src="/icons/icon-18.svg" alt="Email" width={20} height={20} className="shrink-0" />
                 <span className="text-[#1A3B5C] group-hover:text-[#0097A7] transition-colors">
                   info@badranhospital.com
                 </span>
@@ -160,12 +132,8 @@ export function Footer() {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-[#1A3B5C]">
-              Subscribe to our newsletter
-            </h3>
-            <p className="text-[#1A3B5C]/80">
-              to get the latest news about health from our experts
-            </p>
+            <h3 className="text-xl font-bold text-[#1A3B5C]">Subscribe to our newsletter</h3>
+            <p className="text-[#1A3B5C]/80">to get the latest news about health from our experts</p>
             <form onSubmit={handleSubmit} className="relative">
               <input
                 type="email"
@@ -185,13 +153,7 @@ export function Footer() {
               </button>
             </form>
             {message && (
-              <p
-                className={`text-sm ${
-                  status === "success" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {message}
-              </p>
+              <p className={`text-sm ${status === "success" ? "text-green-600" : "text-red-600"}`}>{message}</p>
             )}
           </div>
         </div>
@@ -225,12 +187,11 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-[#1A3B5C] text-sm text-center md:text-right">
-              Copyright © {new Date().getFullYear()} Badran Hospital. All rights
-              reserved.
+              Copyright © {new Date().getFullYear()} Badran Hospital. All rights reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
