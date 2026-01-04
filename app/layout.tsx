@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/shared/header-bar";
 import { Footer } from "@/components/shared/footer-sec";
 import { WhatsAppButton } from "@/components/shared/whatsapp-btn";
+import { CollapsibleBtn } from "@/components/shared/collapsible-btn";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,7 +31,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <WhatsAppButton />
+        {/* <WhatsAppButton /> */}
+        <CollapsibleBtn />
       </body>
     </html>
   );

@@ -74,17 +74,17 @@ export function CenterOfExcellence() {
               <div className="absolute inset-0 bg-[#007F80] transition-colors duration-300 group-hover:bg-[#005C5D]" />
 
               {/* Default State Content */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0">
+              <div className="absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0">
                 {/* Icon Top Left */}
                 <div>
                   <img src={specialty.icon} alt={specialty.title} className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert" />
                 </div>
                 {/* Title Bottom Left */}
-                <h3 className="text-white font-bold text-lg md:text-xl leading-tight">{specialty.title}</h3>
+                <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">{specialty.title}</h3>
               </div>
 
               {/* Hover State Content */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 p-6 md:p-4 flex flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 {/* Watermark Icon */}
                 <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
                    <img src={specialty.icon} alt="" className="w-64 h-64 brightness-0 invert" />
@@ -92,11 +92,11 @@ export function CenterOfExcellence() {
 
                 {/* Header Row: Title + Arrow */}
                 <div className="flex justify-between items-start w-full mb-auto relative z-10">
-                  <h3 className="text-white font-bold text-lg md:text-xl">{specialty.title}</h3>
+                  <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">{specialty.title}</h3>
                 </div>
 
                 {/* Description Bottom */}
-                <p className="text-white text-sm md:text-md leading-relaxed font-medium relative z-10">
+                <p className="text-white text-sm md:text-md xl:text-lg leading-relaxed font-medium relative z-10">
                   {specialty.description}
                 </p>
               </div>

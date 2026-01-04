@@ -4,7 +4,7 @@ import BackgroundVideo from "next-video/background-video"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col">
+    <section className="relative min-h-[85vh] md:min-h-screen flex flex-col">
       {/* Background Video/Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <BackgroundVideo

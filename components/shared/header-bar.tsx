@@ -33,7 +33,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex flex-col items-center">
@@ -42,7 +42,7 @@ export function Navbar() {
                 alt="Badran Hospital Logo" 
                 width={64}
                 height={64}
-                className="h-12 md:h-16 w-auto" 
+                className="h-12 md:h-20 w-auto" 
                 priority
               />
             </div>
@@ -54,7 +54,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-white text-sm font-medium hover:text-white/80 transition-colors"
+                className="text-white text-sm md:text-md xl:text-lg font-semibold hover:text-white/80 transition-colors whitespace-nowrap text-ellipsis"
               >
                 {link.label}
               </Link>

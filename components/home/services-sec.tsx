@@ -75,10 +75,10 @@ export function MedicalServices() {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="snap-center shrink-0 w-[65vw] md:w-auto flex flex-col items-center justify-center p-6 gap-4 shadow-sm hover:shadow-md transition-all duration-300 border-none bg-white rounded-xl h-full"
+              className="snap-center shrink-0 w-[65vw] md:w-auto flex flex-col items-center justify-start p-4 gap-0 md:gap-2 shadow-sm hover:shadow-md transition-all duration-300 border-none bg-white rounded-xl h-full"
             >
               {/* Icon */}
-              <div className="shrink-0 mb-2">
+              <div className="shrink-0 ">
                 <Image
                   src={service.icon}
                   alt={service.title}
@@ -88,9 +88,9 @@ export function MedicalServices() {
                 />
               </div>
 
-              <div className="flex flex-col gap-3 items-center text-center">
+              <div className="flex flex-col gap-1 items-center text-center w-full">
                 {/* Title */}
-                <h3 className="text-[#12323A] font-bold text-lg md:text-base whitespace-nowrap">
+                <h3 className="text-[#12323A] font-bold text-lg md:text-base text-balance min-h-12 flex items-center justify-center whitespace-nowrap text-ellipsis">
                   {service.title}
                 </h3>
 

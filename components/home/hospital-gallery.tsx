@@ -59,7 +59,7 @@ export function HospitalGallery() {
         </div>
 
         {/* Main Carousel */}
-        <div className="max-w-7xl mx-auto mb-6">
+        <div className="max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto mb-6">
           <Carousel
             plugins={[plugin.current]}
             setApi={setApi}
@@ -100,7 +100,7 @@ export function HospitalGallery() {
         </div>
 
         {/* Thumbnails */}
-        <div className="max-w-6xl mx-auto overflow-hidden">
+        <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-7xl mx-auto overflow-hidden">
           <div className="flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide justify-start md:justify-center py-4 px-0 md:px-0">
             {galleryImages.map((image, index) => (
               <button
