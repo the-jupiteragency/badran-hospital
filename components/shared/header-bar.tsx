@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "About Us", href: "#about" },
@@ -12,24 +12,26 @@ const navLinks = [
   { label: "Medical Tourism", href: "#tourism" },
   { label: "Health Hub", href: "#health-hub" },
   { label: "Contact us", href: "#contact" },
-]
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 ${
-        isScrolled ? "bg-[#0E7C7B]/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-[#0E7C7B]/95 backdrop-blur-sm shadow-lg "
+          : "bg-[#E2F0F7]/85"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -37,12 +39,12 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex flex-col items-center">
-              <Image 
-                src="/icons/logo.svg" 
-                alt="Badran Hospital Logo" 
+              <Image
+                src={isScrolled ? "/icons/logo.svg" : "/icons/d-logo.svg"}
+                alt="Badran Hospital Logo"
                 width={64}
                 height={64}
-                className="h-12 md:h-20 w-auto" 
+                className="h-12 md:h-20 w-auto"
                 priority
               />
             </div>
@@ -54,7 +56,9 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-white text-sm md:text-md xl:text-lg font-semibold hover:text-white/80 transition-colors whitespace-nowrap text-ellipsis"
+                className={` text-sm md:text-md xl:text-lg font-semibold hover:text-white/80 transition-colors whitespace-nowrap text-ellipsis ${
+                  isScrolled ? "text-white" : " text-[#274760]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -62,13 +66,21 @@ export function Navbar() {
           </nav>
 
           {/* Language Selector - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 text-white">
+          <div
+            className={`hidden lg:flex items-center gap-2  ${
+              isScrolled ? "text-white" : " text-[#274760]"
+            }`}
+          >
             <span className="text-sm font-medium">EN</span>
             <ChevronDown className="w-4 h-4" />
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-white p-2"
+            aria-label="Toggle menu"
+          >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -96,5 +108,5 @@ export function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

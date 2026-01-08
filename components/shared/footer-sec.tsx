@@ -25,10 +25,22 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: "/icons/facebook.svg", href: "https://facebook.com/DrBadranhospital/", label: "Facebook" },
-  { icon: "/icons/Instagram.svg", href: "https://www.instagram.com/badran.hospital/", label: "Instagram" },
-  { icon: "/icons/Linkedin.svg", href: "https://www.linkedin.com/company/badran-hospital-eg/", label: "LinkedIn" },
-]
+  {
+    icon: "/icons/facebook.svg",
+    href: "https://facebook.com/DrBadranhospital/",
+    label: "Facebook",
+  },
+  {
+    icon: "/icons/Instagram.svg",
+    href: "https://www.instagram.com/badran.hospital/",
+    label: "Instagram",
+  },
+  {
+    icon: "/icons/Linkedin.svg",
+    href: "https://www.linkedin.com/company/badran-hospital-eg/",
+    label: "LinkedIn",
+  },
+];
 
 export function Footer() {
   return (
@@ -46,8 +58,9 @@ export function Footer() {
               className="h-24 w-auto"
             />
             <p className="text-[#1A3B5C] text-sm md:text-base leading-relaxed font-light text-balance">
-              Badran Hospital delivers trusted medical care with clinical excellence and personalized attention in the
-              heart of Dokki, Cairo.
+              Badran Hospital delivers trusted medical care with clinical
+              excellence and personalized attention in the heart of Dokki,
+              Cairo.
             </p>
           </div>
 
@@ -67,10 +80,10 @@ export function Footer() {
                 className="mt-1 shrink-0"
               />
               <span className="text-[#1A3B5C] leading-relaxed group-hover:text-[#0097A7] transition-colors whitespace-nowrap">
-                123 Dokki Street, Mohandessein, Egypt.
+                3 Al Ahrar St., Dokki, Mohandessein, Egypt.
               </span>
             </Link>
-            <Link href="tel:19986" className="flex items-center gap-3 group">
+            <div className="flex items-center gap-3">
               <Image
                 src="/icons/icon-13.svg"
                 alt="Phone"
@@ -78,9 +91,26 @@ export function Footer() {
                 height={26}
                 className="shrink-0"
               />
-              <span className="text-[#1A3B5C] group-hover:text-[#0097A7] transition-colors">Hotline: 19986</span>
-            </Link>
-            <Link href="mailto:info@badranhospital.com" className="flex items-center gap-3 group">
+              <div className="flex flex-wrap gap-1 text-[#1A3B5C]">
+                <Link
+                  href="tel:19986"
+                  className="hover:text-[#0097A7] transition-colors"
+                >
+                  19986
+                </Link>
+                <span>/</span>
+                <Link
+                  href="tel:+201029640837"
+                  className="hover:text-[#0097A7] transition-colors whitespace-nowrap"
+                >
+                  +2 0102 964 0837
+                </Link>
+              </div>
+            </div>
+            <Link
+              href="mailto:info@badranhospital.com"
+              className="flex items-center gap-3 group"
+            >
               <Image
                 src="/icons/icon-18.svg"
                 alt="Email"
@@ -157,11 +187,12 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-[#1A3B5C] text-sm text-center md:text-right">
-              Copyright © {new Date().getFullYear()} Badran Hospital. All rights reserved.
+              Copyright © {new Date().getFullYear()} Badran Hospital. All rights
+              reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
