@@ -1,8 +1,11 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-12 md:py-24 bg-linear-to-b from-[#86BBF1]/50 to-[#D2EAEF]/50">
+    <section
+      id="about"
+      className="py-12 md:py-24 bg-linear-to-b from-[#86BBF1]/50 to-[#D2EAEF]/50"
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 max-w-7xl mx-auto">
           {/* Image Side */}
@@ -21,13 +24,22 @@ export function AboutSection() {
             <div className="relative">
               <p className="text-[#1A3C46] text-lg md:text-2xl lg:text-[26px] leading-relaxed font-medium">
                 <span className="inline-block mr-2 align-top translate-y-1">
-                  <img src="/icons/open-quotes.png" alt="open quote" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img
+                    src="/icons/open-quotes.png"
+                    alt="open quote"
+                    className="w-6 h-6 md:w-8 md:h-8"
+                  />
                 </span>
-                From the very first day I founded Badran Hospital more than 45 years ago, my vision was simple: to
-                provide medical care that is professional, humane, and worthy of people's trust.
+                From the very first day I founded Badran Hospital more than 45
+                years ago, my vision was simple: to provide medical care that is
+                professional, humane, and worthy of people's trust.
                 <span className="text-[#0066A2]  ml-2 inline-flex items-center gap-2">
                   - Dr. Badran
-                  <img src="/icons/close-quotes.svg" alt="close quote" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img
+                    src="/icons/close-quotes.svg"
+                    alt="close quote"
+                    className="w-6 h-6 md:w-8 md:h-8"
+                  />
                 </span>
               </p>
             </div>
@@ -39,5 +51,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

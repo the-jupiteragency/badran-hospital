@@ -6,12 +6,12 @@ import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Center of Excellence", href: "#coe" },
-  { label: "Find a Doctor/Speciality", href: "#doctors" },
-  { label: "Medical Tourism", href: "#tourism" },
-  { label: "Health Hub", href: "#health-hub" },
-  { label: "Contact us", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Center of Excellence", href: "/center-of-excellence" },
+  { label: "Find a Doctor/Speciality", href: "/find-a-doctor" },
+  { label: "Medical Tourism", href: "/medical-tourism" },
+  { label: "Health Hub", href: "/health-hub" },
+  { label: "Contact us", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -31,7 +31,7 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 ${
         isScrolled
           ? "bg-[#0E7C7B]/95 backdrop-blur-sm shadow-lg "
-          : "bg-[#E2F0F7]/85"
+          : "bg-[#E2F0F7]/95"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -56,8 +56,10 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={` text-sm md:text-md xl:text-lg font-semibold hover:text-white/80 transition-colors whitespace-nowrap text-ellipsis ${
-                  isScrolled ? "text-white" : " text-[#274760]"
+                className={` text-sm md:text-md xl:text-lg font-semibold transition-colors whitespace-nowrap text-ellipsis ${
+                  isScrolled
+                    ? "text-white hover:text-white/80"
+                    : " text-[#274760] hover:text-[#0066A2]/80"
                 }`}
               >
                 {link.label}
@@ -68,7 +70,9 @@ export function Navbar() {
           {/* Language Selector - Desktop */}
           <div
             className={`hidden lg:flex items-center gap-2  ${
-              isScrolled ? "text-white" : " text-[#274760]"
+              isScrolled
+                ? "text-white hover:text-white/80"
+                : " text-[#274760] hover:text-[#0066A2]/80"
             }`}
           >
             <span className="text-sm font-medium">EN</span>
@@ -78,7 +82,9 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white p-2"
+            className={`lg:hidden text-[#274760] p-2 ${
+              isScrolled ? "text-white" : " text-[#274760]"
+            }`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
