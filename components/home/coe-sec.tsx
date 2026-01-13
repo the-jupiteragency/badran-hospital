@@ -90,18 +90,19 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
                 onClick={() =>
                   setActiveCardIndex(index === activeCardIndex ? null : index)
                 }
-                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border-0 p-0 shadow-none"
+                onMouseLeave={() => setActiveCardIndex(null)}
+                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border-0 p-0 shadow-none select-none"
               >
                 {/* Background & Base Color */}
                 <div
-                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-300 group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
+                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-300 md:group-hover:bg-[#005C5D] ${
                     isActive ? "bg-[#005C5D]" : ""
                   }`}
                 />
 
                 {/* Default State Content */}
                 <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0 group-active:opacity-0 ${
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 md:group-hover:opacity-0 ${
                     isActive ? "opacity-0" : ""
                   }`}
                 >
@@ -110,7 +111,7 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
                     <img
                       src={specialty.icon}
                       alt={specialty.title}
-                      className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert"
+                      className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert pointer-events-none"
                     />
                   </div>
                   {/* Title Bottom Left */}
@@ -121,8 +122,8 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
 
                 {/* Hover State Content */}
                 <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100 ${
-                    isActive ? "opacity-100" : "opacity-0"
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-300 opacity-0 md:group-hover:opacity-100 ${
+                    isActive ? "opacity-100" : ""
                   }`}
                 >
                   {/* Watermark Icon */}
