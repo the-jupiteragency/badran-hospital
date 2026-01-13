@@ -2,18 +2,7 @@ import HeroVideo from "@/videos/hero-sec.mp4";
 import { SearchBar } from "./search-bar";
 import BackgroundVideo from "next-video/background-video";
 
-export function HeroSection({
-  dict,
-  lang,
-}: {
-  dict: {
-    searchPlaceholder: string;
-    bookNow: string;
-    speciality: string;
-    doctor: string;
-  };
-  lang: string;
-}) {
+export function HeroSection({ dict, lang }: { dict: { searchPlaceholder: string; bookNow: string; speciality: string; doctor: string }; lang: string }) {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex flex-col">
       {/* Background Video/Image */}
@@ -37,5 +26,5 @@ export function HeroSection({
         </div>
       </div>
     </section>
-  );
+  )
 }
