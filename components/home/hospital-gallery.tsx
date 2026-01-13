@@ -13,6 +13,11 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { cn } from "@/lib/utils"
 
+type GalleryDict = {
+  subtitle: string;
+  title: string;
+};
+
 const galleryImages = [
   { src: "/hospital-gallery/image-1.webp", alt: "Hospital Facility 1" },
   { src: "/hospital-gallery/image-2.webp", alt: "Hospital Facility 2" },
@@ -25,7 +30,7 @@ const galleryImages = [
   { src: "/hospital-gallery/image-10.webp", alt: "Hospital Facility 10" },
 ]
 
-export function HospitalGallery() {
+export function HospitalGallery({ dict, lang }: { dict: GalleryDict; lang: string }) {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
@@ -51,10 +56,9 @@ export function HospitalGallery() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
-          <p className="text-[#388AA3] text-lg font-medium mb-2 uppercase tracking-wide">Our Legacy</p>
+          <p className="text-[#388AA3] text-lg font-medium mb-2 uppercase tracking-wide">{dict.subtitle}</p>
           <h2 className="text-3xl md:text-5xl text-[#1A3B5C] text-balance leading-tight tracking-wide ">
-            Expertise, and deep respect
-            <br className="hidden md:block" /> for every patient.
+            {dict.title}
           </h2>
         </div>
 
@@ -63,6 +67,9 @@ export function HospitalGallery() {
           <Carousel
             plugins={[plugin.current]}
             setApi={setApi}
+            opts={{
+              direction: lang === "ar" ? "rtl" : "ltr",
+            }}
             className="w-full relative rounded-lg overflow-hidden shadow-2xl"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
@@ -101,14 +108,17 @@ export function HospitalGallery() {
 
         {/* Thumbnails */}
         <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-7xl mx-auto overflow-hidden">
-          <div className="flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide justify-start md:justify-center py-4 px-0 md:px-0">
+          <div className={`flex gap-2 md:gap-4 overflow-x-auto scrollbar-hide py-4 px-0 md:px-0 ${
+            lang === "ar" ? "justify-end md:justify-center" : "justify-start md:justify-center"
+          }`}>
             {galleryImages.map((image, index) => (
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
                 className={cn(
                   "relative shrink-0 w-24  md:w-32 aspect-square rounded-lg overflow-hidden transition-all duration-300 border-2",
-                  index === 0 && "ml-1 md:ml-36",
+                  index === 0 && lang !== "ar" && "ml-1 md:ml-36",
+                  index === 0 && lang === "ar" && "mr-1 md:mr-36",
                   current === index
                     ? "border-[#0097A7] scale-105 shadow-md ring-2 ring-[#0097A7]/20"
                     : "border-transparent opacity-60 hover:opacity-100"

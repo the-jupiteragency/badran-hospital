@@ -1,55 +1,63 @@
 import Image from "next/image";
 
-const values = [
+type CoreValuesDict = {
+  subtitle: string;
+  title: string;
+  values: {
+    patientFirst: { title: string; description: string };
+    integrity: { title: string; description: string };
+    excellence: { title: string; description: string };
+    compassion: { title: string; description: string };
+    teamwork: { title: string; description: string };
+    innovation: { title: string; description: string };
+  };
+};
+
+const getValues = (dict: CoreValuesDict) => [
   {
     icon: "/icons/value-1.svg",
-    title: "Patient First",
-    description:
-      "We place patient safety, comfort, and well-being at the center of everything we do.",
+    title: dict.values.patientFirst.title,
+    description: dict.values.patientFirst.description,
   },
   {
     icon: "/icons/value-2.svg",
-    title: "Medical Integrity",
-    description:
-      "We practice medicine with honesty, transparency, and the highest ethical standards.",
+    title: dict.values.integrity.title,
+    description: dict.values.integrity.description,
   },
   {
     icon: "/icons/value-3.svg",
-    title: "Clinical Excellence",
-    description:
-      "We are committed to delivering high-quality care through continuous improvement and adherence to best medical practices.",
+    title: dict.values.excellence.title,
+    description: dict.values.excellence.description,
   },
   {
     icon: "/icons/value-4.svg",
-    title: "Compassionate Care",
-    description:
-      "We treat every patient with empathy, respect, and genuine human care.",
+    title: dict.values.compassion.title,
+    description: dict.values.compassion.description,
   },
   {
     icon: "/icons/value-5.svg",
-    title: "Teamwork & Collaboration",
-    description:
-      "We believe that strong collaboration among healthcare professionals leads to better patient outcomes.",
+    title: dict.values.teamwork.title,
+    description: dict.values.teamwork.description,
   },
   {
     icon: "/icons/value-6.svg",
-    title: "Innovation",
-    description:
-      "We embrace modern medical technologies and innovative approaches to enhance diagnosis, treatment, and patient experience.",
+    title: dict.values.innovation.title,
+    description: dict.values.innovation.description,
   },
 ];
 
-export function OurCoreSec() {
+export function OurCoreSec({ dict }: { dict: CoreValuesDict }) {
+  const values = getValues(dict);
   return (
     <section className="w-full py-10 lg:py-20 bg-[#DCECF9]">
       <div className="max-w-7xl mx-auto px-2 md:px-4">
         {/* Header */}
         <div className="flex flex-col items-start lg:items-center mb-8 lg:mb-14">
           <span className="text-[#388AA3] font-medium text-lg lg:text-xl mb-2">
-            What We Stand For
+            {dict.subtitle}
           </span>
           <h2 className="text-[#274760] font-medium text-3xl lg:text-5xl">
-            Our Core Values
+            {dict.title}
           </h2>
         </div>
 

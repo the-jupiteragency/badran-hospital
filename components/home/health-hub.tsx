@@ -6,6 +6,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 
+type HealthHubDict = {
+  subtitle: string;
+  title: string;
+  viewAll: string;
+  learnMore: string;
+};
+
 const blogPosts = [
   {
     id: 1,
@@ -37,7 +44,7 @@ const blogPosts = [
   },
 ]
 
-export function HealthHub() {
+export function HealthHub({ dict, lang }: { dict: HealthHubDict; lang: string }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -62,16 +69,18 @@ export function HealthHub() {
         {/* Header */}
         <div className="flex flex-col  mb-8 md:mb-10 relative">
            <div className="text-center md:text-start">
-            <p className="text-[#388AA3] font-medium text-md mb-2">Read the latest</p>
-            <h2 className="text-[#12323A] text-4xl md:text-3xl lg:text-4xl">Health Hub</h2>
+            <p className="text-[#388AA3] font-medium text-md mb-2">{dict.subtitle}</p>
+            <h2 className="text-[#12323A] text-4xl md:text-3xl lg:text-4xl">{dict.title}</h2>
           </div>
           
           <Link
             href="/health-hub"
-            className="hidden md:flex absolute right-0 bottom-0 items-center gap-1 text-[#12323A] font-medium hover:text-[#0FA5A1] transition-colors"
+            className={`hidden md:flex absolute bottom-0 items-center gap-1 text-[#12323A] font-medium hover:text-[#0FA5A1] transition-colors ${
+              lang === "ar" ? "left-0" : "right-0"
+            }`}
           >
-            View all
-            <ChevronRight className="w-5 h-5" />
+            {dict.viewAll}
+            {lang === "ar" ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
           </Link>
         </div>
 
@@ -128,7 +137,7 @@ export function HealthHub() {
                         href={`/health-hub/${post.id}`}
                         className="text-[#12323A] text-sm font-medium underline hover:text-[#0FA5A1] transition-colors inline-flex items-center gap-1"
                       >
-                        Learn more
+                        {dict.learnMore}
                      </Link>
                   </div>
                 </div>
@@ -145,7 +154,7 @@ export function HealthHub() {
             className="w-12 h-12 rounded-full bg-[#E5F5F4] text-[#0FA5A1] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#0FA5A1] hover:text-white transition-colors"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6" />
+            {lang === "ar" ? <ChevronRight className="w-6 h-6" /> : <ChevronLeft className="w-6 h-6" />}
           </button>
           <button
             onClick={() => scrollToIndex(currentIndex + 1)}
@@ -153,7 +162,7 @@ export function HealthHub() {
             className="w-12 h-12 rounded-full bg-[#E5F5F4] text-[#0FA5A1] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#0FA5A1] hover:text-white transition-colors"
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6" />
+            {lang === "ar" ? <ChevronLeft className="w-6 h-6" /> : <ChevronRight className="w-6 h-6" />}
           </button>
         </div>
 

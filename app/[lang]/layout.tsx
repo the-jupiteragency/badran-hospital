@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Navbar } from "@/components/shared/header-bar";
 import { Footer } from "@/components/shared/footer-sec";
 import { CollapsibleBtn } from "@/components/shared/collapsible-btn";
+import { getDictionary, hasLocale } from "@/app/dictionaries";
+import { notFound } from "next/navigation";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,18 +19,30 @@ export const metadata: Metadata = {
     "Badran Hospital provides professional, humane medical care with over 45 years of trusted service. Find top specialists in Cardiology, Oncology, Orthopedics, and more.",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "ar" }];
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+
+  if (!hasLocale(lang)) notFound();
+
+  const dict = await getDictionary(lang);
+
   return (
-    <html lang="en">
+    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
       <body className={`${poppins.variable} antialiased`}>
-        <Navbar />
+        <Navbar lang={lang} dict={dict.nav} />
         {children}
-        <Footer />
-        <CollapsibleBtn />
+        <Footer dict={dict.footer} lang={lang} />
+        <CollapsibleBtn lang={lang} />
       </body>
     </html>
   );

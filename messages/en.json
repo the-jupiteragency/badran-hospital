@@ -1,0 +1,272 @@
+{
+  "nav": {
+    "aboutUs": "About Us",
+    "coe": "Center of Excellence",
+    "findDoctor": "Find a Doctor/Speciality",
+    "medicalTourism": "Medical Tourism",
+    "healthHub": "Health Hub",
+    "contact": "Contact us",
+    "viewAll": "View all",
+    "language": "EN"
+  },
+  "home": {
+    "hero": {
+      "searchPlaceholder": "Search for doctors, Specializations...",
+      "speciality": "Speciality",
+      "doctor": "Doctor",
+      "bookNow": "Book Now"
+    },
+
+    "about": {
+      "quote": "Dr. Ibrahim Badran always believed that a hospital should serve its community with Honesty, Compassion, and Responsibility.",
+      "buttonText": "About Us"
+    },
+    "coe": {
+      "subtitle": "Where expertise meets advanced care.",
+      "title": "Center of Excellence",
+      "description": "At Badran Hospital, our Centers of Excellence represent the highest level of specialized medical care. Led by top consultants and supported by advanced technology, each center delivers trusted outcomes and exceptional patient experiences across our key specialties.",
+      "buttonText": "SEE MORE",
+      "specialties": {
+        "cardiology": {
+          "title": "Cardiology",
+          "description": "Comprehensive heart care supported by advanced diagnostics and expert cardiologists."
+        },
+        "oncology": {
+          "title": "Oncology",
+          "description": "State-of-the-art cancer treatment with a compassionate, multidisciplinary approach."
+        },
+        "plasticSurgery": {
+          "title": "Plastic Surgery",
+          "description": "Restoring form and function with expert cosmetic and reconstructive surgical procedures."
+        },
+        "orthopedics": {
+          "title": "Orthopedics",
+          "description": "Advanced care for bones, joints, and muscles to restore mobility and quality of life."
+        },
+        "gastroenterology": {
+          "title": "Gastroenterology",
+          "description": "Expert diagnosis and treatment for digestive system disorders and liver conditions."
+        }
+      }
+    },
+    "services": {
+      "subtitle": "Comprehensive Care for Every Need",
+      "title": "Our Medical Services",
+      "description": "At Badran Hospital, we offer a full range of medical services designed to provide accurate diagnosis, effective treatment, and continuous care. From emergency response to advanced surgeries, our departments work together to ensure every patient receives the highest standard of medical attention and comfort.",
+      "items": {
+        "surgery": {
+          "title": "Surgery Department",
+          "description": "Our surgical team combines decades of experience with advanced techniques to ensure safe, successful procedures."
+        },
+        "icu": {
+          "title": "Intensive Care Unit (ICU)",
+          "description": "Equipped with state-of-the-art monitoring systems, our ICU provides 24/7 critical care for patients who need continuous observation and specialized medical attention."
+        },
+        "inpatient": {
+          "title": "Inpatient Clinics",
+          "description": "Safe, comfortable, and closely monitored recovery. Our inpatient department provides 24/7 medical supervision and a supportive healing environment for patients who require extended care or post-surgery recovery."
+        },
+        "outpatient": {
+          "title": "Outpatient Clinics",
+          "description": "Our clinics bring together leading specialists across multiple fields to provide accurate diagnosis, follow-up, and personalized treatment for every patient."
+        },
+        "laboratory": {
+          "title": "Laboratory Services",
+          "description": "Our fully equipped lab delivers reliable test results with precision and speed, supporting doctors in accurate diagnosis and treatment planning."
+        },
+        "emergency": {
+          "title": "Emergency Department (ER)",
+          "description": "Our emergency unit operates 24/7 with a dedicated medical team ready to respond quickly to urgent and critical cases."
+        },
+        "dayCase": {
+          "title": "Day Case Unit",
+          "description": "For procedures that require no overnight stay, our Day Case Unit ensures comfort, safety, and a quick recovery that allowing patients to return home the same day."
+        },
+        "radiology": {
+          "title": "Radiology Department",
+          "description": "Using advanced imaging technologies such as CT, MRI, and digital X-ray, our radiology department supports fast and precise diagnosis for all medical conditions."
+        }
+      }
+    },
+    "healthHub": {
+      "subtitle": "Read the latest",
+      "title": "Health Hub",
+      "viewAll": "View all",
+      "learnMore": "Learn more"
+    },
+    "gallery": {
+      "subtitle": "Our Legacy",
+      "title": "Expertise, and deep respect for every patient."
+    }
+  },
+  "about": {
+    "hero": {
+      "subtitle": "Where expertise meets advanced care.",
+      "title": "Excellence of Healthcare",
+      "description": "Badran Hospital delivers trusted medical care with clinical excellence and personalized attention in the heart of Dokki, Cairo.",
+      "stats": {
+        "iso": {
+          "title": "ISO Certified",
+          "subtitle": "Medical Excellence"
+        },
+        "years": {
+          "title": "45+",
+          "subtitle": "Years"
+        },
+        "specialties": {
+          "title": "15+",
+          "subtitle": "Specialities"
+        },
+        "care": {
+          "title": "24/7",
+          "subtitle": "Care"
+        }
+      }
+    },
+    "journey": {
+      "subtitle": "Our Journey",
+      "title": "45 Years of Trust & Care",
+      "items": {
+        "founded": {
+          "title": "Founded in 1979",
+          "description": "Established as a private multi-specialty hospital to meet the essential medical needs of the Dokki community."
+        },
+        "growth": {
+          "title": "Continuous Growth",
+          "description": "Expanded services, upgraded technologies, and developed new departments while maintaining our core values."
+        },
+        "leading": {
+          "title": "Leading Institution Today",
+          "description": "One of the most recognized medical institutions offering complete continuum of care with advanced diagnostics and specialized clinics."
+        }
+      }
+    },
+    "missionVision": {
+      "subtitle": "Our Journey",
+      "title": "Mission & Vision",
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide safe, high-quality, patient-centered healthcare delivered with compassion, professionalism, and integrity. We ensure every patient receives accurate diagnosis, effective treatment, and continuous support throughout their healing journey."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To be the most trusted and accessible hospital in Dokki and Greater Cairo-recognized for medical excellence, modern healthcare solutions, and a commitment to improving the lives of our patients and community."
+      }
+    },
+    "coreValues": {
+      "subtitle": "What We Stand For",
+      "title": "Our Core Values",
+      "values": {
+        "patientFirst": {
+          "title": "Patient First",
+          "description": "We place patient safety, comfort, and well-being at the center of everything we do."
+        },
+        "integrity": {
+          "title": "Medical Integrity",
+          "description": "We practice medicine with honesty, transparency, and the highest ethical standards."
+        },
+        "excellence": {
+          "title": "Clinical Excellence",
+          "description": "We are committed to delivering high-quality care through continuous improvement and adherence to best medical practices."
+        },
+        "compassion": {
+          "title": "Compassionate Care",
+          "description": "We treat every patient with empathy, respect, and genuine human care."
+        },
+        "teamwork": {
+          "title": "Teamwork & Collaboration",
+          "description": "We believe that strong collaboration among healthcare professionals leads to better patient outcomes."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We embrace modern medical technologies and innovative approaches to enhance diagnosis, treatment, and patient experience."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Excellence?",
+      "subtitle": "Join thousands of patients who trust Badran Hospital for their healthcare needs.",
+      "buttonText": "Book Appointment"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "intro": "Badran Hospital is committed to protecting your privacy and ensuring the confidentiality of your personal information. This Privacy Policy explains how we collect, use, and protect information when you interact with our website, services, and medical facilities.",
+      "infoCollect": {
+        "title": "Information We Collect",
+        "content": "We may collect the following types of information:\n\n- Personal Information: Name, contact details."
+      },
+      "howWeUse": {
+        "title": "How We Use Your Information",
+        "content": "Your information is used for purposes including:\n\n- Providing medical care and services.\n- Scheduling appointments and sending reminders.\n- Communicating health updates or educational content.\n- Improving our services and website experience.\n- Complying with legal or regulatory requirements."
+      },
+      "infoSharing": {
+        "title": "Information Sharing",
+        "content": "We do not sell or rent your personal information. We may share your information only:\n\n- With medical professionals involved in your care.\n- With service providers who help us operate our systems, under strict confidentiality agreements.\n- As required by law or regulatory authorities."
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical, administrative, and physical safeguards to protect your data against unauthorized access, alteration, or loss."
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "content": "You have the right to:\n\n- Access your personal and medical information.\n- Request corrections or updates to your data.\n- Request deletion of non-essential data, subject to legal and medical obligations."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy periodically. Updates will be posted on this page with a revised effective date."
+      }
+    }
+  },
+  "termsConditions": {
+    "title": "Terms and Conditions",
+    "sections": {
+      "useOfWebsite": {
+        "title": "Use of Website",
+        "content": "By accessing our website, you agree to use it only for lawful purposes. You may not:\n\n- Upload harmful, offensive, or illegal content.\n- Attempt to gain unauthorized access to our systems.\n- Interfere with the website's operation or other users' access."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "All content on this website, including text, images, and videos, is the property of Badran Hospital and is protected under copyright laws. Unauthorized use or reproduction is prohibited."
+      },
+      "appointmentPolicies": {
+        "title": "Appointment and Service Policies",
+        "content": "- Appointments should be booked in advance. Walk-ins are accepted based on availability.\n- Cancellation or rescheduling should be communicated at least 24 hours in advance.\n- Patients must provide accurate personal and medical information for proper care."
+      },
+      "healthDisclaimer": {
+        "title": "Health Information Disclaimer",
+        "content": "The content on our website is for general informational purposes only and does not replace professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider for medical concerns."
+      },
+      "limitationLiability": {
+        "title": "Limitation of Liability",
+        "content": "Badran Hospital is not liable for damages resulting from the use or inability to use our website or services, except as required by applicable law."
+      },
+      "changesToPolicies": {
+        "title": "Changes to Policies",
+        "content": "We reserve the right to modify these policies at any time. Updates will be posted on our website."
+      }
+    }
+  },
+  "footer": {
+    "description": "Badran Hospital delivers trusted medical care with clinical excellence and personalized attention in the heart of Dokki, Cairo.",
+    "followUs": "Follow Us",
+    "copyright": "Copyright © {year} Badran Hospital. All rights reserved.",
+    "contact": {
+      "address": "3 Al Ahrar St., Dokki, Mohandessein, Egypt.",
+      "email": "info@badranhospital.com"
+    },
+    "links": {
+      "aboutUs": "About Us",
+      "healthHub": "Health Hub",
+      "findDoctor": "Find a Doctor",
+      "findSpeciality": "Find a speciality",
+      "medicalTourism": "Medical Tourism",
+      "careers": "Careers",
+      "contactUs": "Contact Us",
+      "faqs": "FAQs",
+      "privacyPolicy": "Privacy Policy",
+      "termsConditions": "Terms and Conditions"
+    }
+  }
+}

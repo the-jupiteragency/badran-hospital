@@ -1,28 +1,58 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Search, ChevronDown, ArrowRight } from "lucide-react";
+import { Search, ChevronDown, ArrowRight, ArrowLeft } from "lucide-react";
 
-const MOCK_SPECIALTIES = [
-  "Cardiology",
-  "Neurology",
-  "Orthopedics",
-  "Pediatrics",
-  "Dermatology",
-  "General Surgery",
-];
+const MOCK_SPECIALTIES = {
+  en: [
+    "Cardiology",
+    "Neurology",
+    "Orthopedics",
+    "Pediatrics",
+    "Dermatology",
+    "General Surgery",
+  ],
+  ar: [
+    "أمراض القلب",
+    "الأمراض العصبية",
+    "جراحة العظام",
+    "طب الأطفال",
+    "الأمراض الجلدية",
+    "الجراحة العامة",
+  ],
+};
 
-const MOCK_DOCTORS = [
-  "Dr. Ahmed Hassan",
-  "Dr. Sarah Johnson",
-  "Dr. Mohamed Ali",
-  "Dr. Emily Davis",
-  "Dr. Karim Said",
-];
+const MOCK_DOCTORS = {
+  en: [
+    "Dr. Ahmed Hassan",
+    "Dr. Sarah Johnson",
+    "Dr. Mohamed Ali",
+    "Dr. Emily Davis",
+    "Dr. Karim Said",
+  ],
+  ar: [
+    "د. أحمد حسن",
+    "د. سارة جونسون",
+    "د. محمد علي",
+    "د. إيميلي ديفيس",
+    "د. كريم سعيد",
+  ],
+};
 
-export function SearchBar() {
-  const [specialty, setSpecialty] = useState("Cardiology");
-  const [doctor, setDoctor] = useState("Dr. Ahmed Hassan");
+type SearchDict = {
+  searchPlaceholder: string;
+  bookNow: string;
+  speciality: string;
+  doctor: string;
+};
+
+export function SearchBar({ dict, lang }: { dict: SearchDict; lang: string }) {
+  const [specialty, setSpecialty] = useState(
+    lang === "ar" ? "أمراض القلب" : "Cardiology"
+  );
+  const [doctor, setDoctor] = useState(
+    lang === "ar" ? "د. أحمد حسن" : "Dr. Ahmed Hassan"
+  );
 
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [isDocOpen, setIsDocOpen] = useState(false);
@@ -52,7 +82,7 @@ export function SearchBar() {
         <Search className="w-5 h-5 text-gray-400 mr-3 shrink-0" />
         <input
           type="text"
-          placeholder="Search for doctors, Specializations..."
+          placeholder={dict.searchPlaceholder}
           className="flex-1 bg-transparent text-[#12323A] placeholder:text-gray-400 text-sm md:text-base outline-none"
         />
       </div>
@@ -76,7 +106,7 @@ export function SearchBar() {
             </div>
             <div className="flex flex-col min-w-0">
               <span className="text-white/70 text-xs md:text-md">
-                Speciality
+                {dict.speciality}
               </span>
               <div className="flex items-center gap-1">
                 <span className="text-white font-semibold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis max-w-[90px] md:max-w-[150px] overflow-hidden">
@@ -93,7 +123,7 @@ export function SearchBar() {
             {/* Dropdown Menu */}
             {isSpecOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg py-2 z-50 overflow-hidden">
-                {MOCK_SPECIALTIES.map((item) => (
+                {MOCK_SPECIALTIES[lang as "en" | "ar"].map((item) => (
                   <div
                     key={item}
                     className={`px-4 py-2 hover:bg-gray-100 cursor-pointer text-[#12323A] ${
@@ -126,7 +156,9 @@ export function SearchBar() {
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-white/70 text-xs md:text-md">Doctor</span>
+              <span className="text-white/70 text-xs md:text-md">
+                {dict.doctor}
+              </span>
               <div className="flex items-center gap-1">
                 <span className="text-white font-semibold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis max-w-[90px] md:max-w-[150px] overflow-hidden">
                   {doctor}
@@ -142,7 +174,7 @@ export function SearchBar() {
             {/* Dropdown Menu */}
             {isDocOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg py-2 z-50 overflow-hidden">
-                {MOCK_DOCTORS.map((item) => (
+                {MOCK_DOCTORS[lang as "en" | "ar"].map((item) => (
                   <div
                     key={item}
                     className={`px-4 py-2 hover:bg-gray-100 cursor-pointer text-[#12323A] ${
@@ -163,9 +195,14 @@ export function SearchBar() {
         </div>
 
         {/* Book Now Button */}
-        <button className="md:ml-auto w-full md:w-auto bg-white text-[#0FA5A1] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/90 transition-all hover:-translate-y-0.5 hover:shadow-lg">
-          Book Now
-          <ArrowRight className="w-5 h-5" />
+        <button
+          className={`w-full md:w-auto bg-white text-[#0FA5A1] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/90 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
+            lang === "ar" ? "md:mr-auto" : "md:ml-auto"
+          }`}
+        >
+          {dict.bookNow}
+          {lang === "ar" && <ArrowLeft className="w-5 h-5" />}
+          {lang !== "ar" && <ArrowRight className="w-5 h-5" />}
         </button>
       </div>
     </div>

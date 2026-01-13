@@ -1,61 +1,78 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { ArrowRight } from "lucide-react"
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
-const specialties = [
-  {
-    title: "Cardiology",
-    icon: "/icons/icon-3.svg",
-    description: "Comprehensive heart care supported by advanced diagnostics and expert cardiologists.",
-  },
-  {
-    title: "Oncology",
-    icon: "/icons/icon-4.svg",
-    description: "State-of-the-art cancer treatment with a compassionate, multidisciplinary approach.",
-  },
-  {
-    title: "Plastic Surgery",
-    icon: "/icons/icon-5.svg",
-    description: "Restoring form and function with expert cosmetic and reconstructive surgical procedures.",
-  },
-  {
-    title: "Orthopedics",
-    icon: "/icons/icon-6.svg",
-    description: "Advanced care for bones, joints, and muscles to restore mobility and quality of life.",
-  },
-  {
-    title: "Gastroenterology",
-    icon: "/icons/icon-7.svg",
-    description: "Expert diagnosis and treatment for digestive system disorders and liver conditions.",
-  },
-]
+type CoeDict = {
+  subtitle: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  specialties: {
+    cardiology: { title: string; description: string };
+    oncology: { title: string; description: string };
+    plasticSurgery: { title: string; description: string };
+    orthopedics: { title: string; description: string };
+    gastroenterology: { title: string; description: string };
+  };
+};
 
-export function CenterOfExcellence() {
-  const scrollRef = useRef<HTMLDivElement>(null)
+export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const specialties = [
+    {
+      title: dict.specialties.cardiology.title,
+      icon: "/icons/icon-3.svg",
+      description: dict.specialties.cardiology.description,
+    },
+    {
+      title: dict.specialties.oncology.title,
+      icon: "/icons/icon-4.svg",
+      description: dict.specialties.oncology.description,
+    },
+    {
+      title: dict.specialties.plasticSurgery.title,
+      icon: "/icons/icon-5.svg",
+      description: dict.specialties.plasticSurgery.description,
+    },
+    {
+      title: dict.specialties.orthopedics.title,
+      icon: "/icons/icon-6.svg",
+      description: dict.specialties.orthopedics.description,
+    },
+    {
+      title: dict.specialties.gastroenterology.title,
+      icon: "/icons/icon-7.svg",
+      description: dict.specialties.gastroenterology.description,
+    },
+  ];
 
   return (
-    <section id="coe" className="py-12 md:py-24 bg-linear-to-b from-[#86BBF1]/50 to-[#D2EAEF]/50">
+    <section
+      id="coe"
+      className="py-12 md:py-24 bg-linear-to-b from-[#86BBF1]/50 to-[#D2EAEF]/50"
+    >
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-8 md:mb-10">
           <p className="text-[#388AA3] font-medium text-sm md:text-lg mb-3 tracking-wide">
-            Where expertise meets advanced care.
+            {dict.subtitle}
           </p>
-          <h2 className="text-[#0E2E3B] text-3xl md:text-5xl font-light mb-6">Center of Excellence</h2>
+          <h2 className="text-[#0E2E3B] text-3xl md:text-5xl font-light mb-6">
+            {dict.title}
+          </h2>
           <p className=" text-sm md:text-lg leading-relaxed max-w-xl font-light mx-auto">
-            At Badran Hospital, our Centers of Excellence represent the highest level of specialized medical care. Led
-            by top consultants and supported by advanced technology, each center delivers trusted outcomes and
-            exceptional patient experiences across our key specialties.
+            {dict.description}
           </p>
         </div>
 
         {/* Desktop Button (Above Cards) */}
         <div className="hidden md:flex justify-center mb-12">
           <Button className="bg-[#0499AB] text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md transition-all hover:-translate-y-0.5">
-            SEE MORE
+            {dict.buttonText}
           </Button>
         </div>
 
@@ -77,22 +94,34 @@ export function CenterOfExcellence() {
               <div className="absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0">
                 {/* Icon Top Left */}
                 <div>
-                  <img src={specialty.icon} alt={specialty.title} className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert" />
+                  <img
+                    src={specialty.icon}
+                    alt={specialty.title}
+                    className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert"
+                  />
                 </div>
                 {/* Title Bottom Left */}
-                <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">{specialty.title}</h3>
+                <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
+                  {specialty.title}
+                </h3>
               </div>
 
               {/* Hover State Content */}
               <div className="absolute inset-0 p-6 md:p-4 flex flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 {/* Watermark Icon */}
                 <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
-                   <img src={specialty.icon} alt="" className="w-64 h-64 brightness-0 invert" />
+                  <img
+                    src={specialty.icon}
+                    alt=""
+                    className="w-64 h-64 brightness-0 invert"
+                  />
                 </div>
 
                 {/* Header Row: Title + Arrow */}
                 <div className="flex justify-between items-start w-full mb-auto relative z-10">
-                  <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">{specialty.title}</h3>
+                  <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">
+                    {specialty.title}
+                  </h3>
                 </div>
 
                 {/* Description Bottom */}
@@ -107,10 +136,10 @@ export function CenterOfExcellence() {
         {/* Mobile Button (Below Cards) */}
         <div className="flex md:hidden justify-center mt-8">
           <Button className="w-full bg-[#0499AB] text-white py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md">
-            SEE MORE
+            {dict.buttonText}
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

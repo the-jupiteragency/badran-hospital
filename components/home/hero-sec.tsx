@@ -1,8 +1,8 @@
-import HeroVideo from "@/videos/hero-sec.mp4"
-import { SearchBar } from "./search-bar"
-import BackgroundVideo from "next-video/background-video"
+import HeroVideo from "@/videos/hero-sec.mp4";
+import { SearchBar } from "./search-bar";
+import BackgroundVideo from "next-video/background-video";
 
-export function HeroSection() {
+export function HeroSection({ dict, lang }: { dict: { searchPlaceholder: string }; lang: string }) {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen flex flex-col">
       {/* Background Video/Image */}
@@ -22,7 +22,7 @@ export function HeroSection() {
       {/* Content Container - Push search bar to bottom */}
       <div className="relative z-10 flex-1 flex flex-col justify-end container mx-auto px-4 md:px-6 pb-8 md:pb-16 pt-24">
         <div className="w-full max-w-5xl mx-auto">
-          <SearchBar />
+          <SearchBar dict={dict} lang={lang} />
         </div>
       </div>
     </section>

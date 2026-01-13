@@ -7,22 +7,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 
-const footerLinks = {
+type FooterDict = {
+  description: string;
+  followUs: string;
+  copyright: string;
+  contact: {
+    address: string;
+    email: string;
+  };
+  links: {
+    aboutUs: string;
+    healthHub: string;
+    findDoctor: string;
+    findSpeciality: string;
+    medicalTourism: string;
+    careers: string;
+    contactUs: string;
+    faqs: string;
+    privacyPolicy: string;
+    termsConditions: string;
+  };
+};
+
+const getFooterLinks = (dict: FooterDict["links"]) => ({
   column1: [
-    { label: "About Us", href: "/about" },
-    { label: "Health Hub", href: "/health-hub" },
-    { label: "Find a Doctor", href: "/doctors" },
-    { label: "Find a speciality", href: "/specialities" },
-    { label: "Medical Tourism", href: "/medical-tourism" },
+    { label: dict.aboutUs, href: "/about" },
+    { label: dict.healthHub, href: "/health-hub" },
+    { label: dict.findDoctor, href: "/doctors" },
+    { label: dict.findSpeciality, href: "/specialities" },
+    { label: dict.medicalTourism, href: "/medical-tourism" },
   ],
   column2: [
-    { label: "Careers", href: "/careers" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms and Conditions", href: "/terms" },
+    { label: dict.careers, href: "/careers" },
+    { label: dict.contactUs, href: "/contact" },
+    { label: dict.faqs, href: "/faqs" },
+    { label: dict.privacyPolicy, href: "/privacy-policy" },
+    { label: dict.termsConditions, href: "/terms-conditions" },
   ],
-};
+});
 
 const socialLinks = [
   {
@@ -42,11 +64,12 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+export function Footer({ dict, lang }: { dict: FooterDict; lang: string }) {
+  const footerLinks = getFooterLinks(dict.links);
   return (
     <footer className="bg-linear-to-b from-[#B2EBF2] to-[#80DEEA]">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-10 md:py-12">
+      <div className="container mx-auto px-5 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 ">
           {/* Column 1: Logo & Description */}
           <div className="space-y-6">
@@ -58,9 +81,7 @@ export function Footer() {
               className="h-24 w-auto"
             />
             <p className="text-[#1A3B5C] text-sm md:text-base leading-relaxed font-light text-balance">
-              Badran Hospital delivers trusted medical care with clinical
-              excellence and personalized attention in the heart of Dokki,
-              Cairo.
+              {dict.description}
             </p>
           </div>
 
@@ -80,7 +101,7 @@ export function Footer() {
                 className="mt-1 shrink-0"
               />
               <span className="text-[#1A3B5C] leading-relaxed group-hover:text-[#0097A7] transition-colors whitespace-nowrap">
-                3 Al Ahrar St., Dokki, Mohandessein, Egypt.
+                {dict.contact.address}
               </span>
             </Link>
             <div className="flex items-center gap-3">
@@ -119,13 +140,13 @@ export function Footer() {
                 className="shrink-0"
               />
               <span className="text-[#1A3B5C] group-hover:text-[#0097A7] transition-colors whitespace-nowrap">
-                info@badranhospital.com
+                {dict.contact.email}
               </span>
             </Link>
           </div>
 
           {/* Navigation Links - Mobile: Side-by-side, Desktop: Standard Columns with Spacing */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2 grid grid-cols-2 gap-4 lg:pl-20">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 grid grid-cols-2 gap-4 lg:pl-20 pr-12">
             {/* Column 3: Navigation Links 1 */}
             <div className="lg:pt-2">
               <nav className="space-y-3">
@@ -142,7 +163,7 @@ export function Footer() {
             </div>
 
             {/* Column 4: Navigation Links 2 */}
-            <div className="lg:pt-2">
+            <div className="lg:pt-2 ">
               <nav className="space-y-3">
                 {footerLinks.column2.map((link) => (
                   <Link
@@ -164,7 +185,9 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <span className="text-[#1A3B5C] font-medium">Follow Us</span>
+              <span className="text-[#1A3B5C] font-medium">
+                {dict.followUs}
+              </span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (
                   <Link
@@ -187,8 +210,10 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-[#1A3B5C] text-sm text-center md:text-right">
-              Copyright © {new Date().getFullYear()} Badran Hospital. All rights
-              reserved.
+              {dict.copyright.replace(
+                "{year}",
+                new Date().getFullYear().toString()
+              )}
             </p>
           </div>
         </div>
