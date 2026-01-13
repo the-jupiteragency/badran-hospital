@@ -13,11 +13,22 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "Badran Hospital - Where Expertise Meets Advanced Care",
-  description:
-    "Badran Hospital provides professional, humane medical care with over 45 years of trusted service. Find top specialists in Cardiology, Oncology, Orthopedics, and more.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  
+  return {
+    title: lang === "ar" 
+      ? "مستشفى بدران - حيث تلتقي الخبرة بالرعاية المتقدمة"
+      : "Badran Hospital - Where Expertise Meets Advanced Care",
+    description: lang === "ar"
+      ? "يقدم مستشفى بدران رعاية طبية احترافية وإنسانية مع أكثر من 45 عامًا من الخدمة الموثوقة. ابحث عن أفضل المتخصصين في أمراض القلب والأورام والعظام والمزيد."
+      : "Badran Hospital provides professional, humane medical care with over 45 years of trusted service. Find top specialists in Cardiology, Oncology, Orthopedics, and more.",
+  };
+}
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];

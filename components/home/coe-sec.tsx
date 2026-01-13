@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
 
 type CoeDict = {
   subtitle: string;
@@ -112,7 +111,7 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
                 <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
                   <img
                     src={specialty.icon}
-                    alt=""
+                    alt="icon"
                     className="w-64 h-64 brightness-0 invert"
                   />
                 </div>
