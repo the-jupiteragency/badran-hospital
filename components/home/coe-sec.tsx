@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -20,6 +20,7 @@ type CoeDict = {
 
 export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
 
   const specialties = [
     {
@@ -81,55 +82,73 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
           className="flex md:grid md:grid-cols-5 gap-4 md:gap-5 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {specialties.map((specialty) => (
-            <Card
-              key={specialty.title}
-              className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border-0 p-0 shadow-none"
-            >
-              {/* Background & Base Color */}
-              <div className="absolute inset-0 bg-[#007F80] transition-colors duration-300 group-hover:bg-[#005C5D]" />
+          {specialties.map((specialty, index) => {
+            const isActive = activeCardIndex === index;
+            return (
+              <Card
+                key={specialty.title}
+                onClick={() =>
+                  setActiveCardIndex(index === activeCardIndex ? null : index)
+                }
+                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border-0 p-0 shadow-none"
+              >
+                {/* Background & Base Color */}
+                <div
+                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-300 group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
+                    isActive ? "bg-[#005C5D]" : ""
+                  }`}
+                />
 
-              {/* Default State Content */}
-              <div className="absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0">
-                {/* Icon Top Left */}
-                <div>
-                  <img
-                    src={specialty.icon}
-                    alt={specialty.title}
-                    className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert"
-                  />
-                </div>
-                {/* Title Bottom Left */}
-                <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
-                  {specialty.title}
-                </h3>
-              </div>
-
-              {/* Hover State Content */}
-              <div className="absolute inset-0 p-6 md:p-4 flex flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                {/* Watermark Icon */}
-                <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
-                  <img
-                    src={specialty.icon}
-                    alt="icon"
-                    className="w-64 h-64 brightness-0 invert"
-                  />
-                </div>
-
-                {/* Header Row: Title + Arrow */}
-                <div className="flex justify-between items-start w-full mb-auto relative z-10">
-                  <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">
+                {/* Default State Content */}
+                <div
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 group-hover:opacity-0 group-active:opacity-0 ${
+                    isActive ? "opacity-0" : ""
+                  }`}
+                >
+                  {/* Icon Top Left */}
+                  <div>
+                    <img
+                      src={specialty.icon}
+                      alt={specialty.title}
+                      className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert"
+                    />
+                  </div>
+                  {/* Title Bottom Left */}
+                  <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
                     {specialty.title}
                   </h3>
                 </div>
 
-                {/* Description Bottom */}
-                <p className="text-white text-sm md:text-md xl:text-lg leading-relaxed font-medium relative z-10">
-                  {specialty.description}
-                </p>
-              </div>
-            </Card>
-          ))}
+                {/* Hover State Content */}
+                <div
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  {/* Watermark Icon */}
+                  <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
+                    <img
+                      src={specialty.icon}
+                      alt="icon"
+                      className="w-64 h-64 brightness-0 invert"
+                    />
+                  </div>
+
+                  {/* Header Row: Title + Arrow */}
+                  <div className="flex justify-between items-start w-full mb-auto relative z-10">
+                    <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">
+                      {specialty.title}
+                    </h3>
+                  </div>
+
+                  {/* Description Bottom */}
+                  <p className="text-white text-sm md:text-md xl:text-lg leading-relaxed font-medium relative z-10">
+                    {specialty.description}
+                  </p>
+                </div>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Mobile Button (Below Cards) */}
