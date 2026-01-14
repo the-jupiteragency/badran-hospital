@@ -189,6 +189,127 @@
       "buttonText": "Book Appointment"
     }
   },
+  "medicalTourism": {
+    "hero": {
+      "title": "Your health journey starts here",
+      "subtitle": "Experience exceptional medical care combined with the warmth of Egyptian hospitality. We make international healthcare simple, safe, and seamless."
+    },
+    "weOffer": {
+      "subtitle": "Why Egypt?",
+      "title": "World-Class Healthcare at Accessible Prices",
+      "items": {
+        "costEffective": {
+          "title": "Cost Effective",
+          "description": "Save 40-60% on medical procedures without compromising quality."
+        },
+        "noWaiting": {
+          "title": "No Waiting Lists",
+          "description": "Quick access to treatments with minimal wait times."
+        },
+        "expertDoctors": {
+          "title": "Expert Doctors",
+          "description": "Internationally trained specialists with decades of experience."
+        },
+        "primeLocation": {
+          "title": "Prime Location",
+          "description": "Easy access from major international airports and hotels."
+        }
+      }
+    },
+    "steps": {
+      "subtitle": "Your Journey",
+      "title": "Five Simple Steps to Better Health",
+      "items": {
+        "step1": {
+          "title": "Initial Consultation",
+          "description": "Save 40-60% on medical procedures without compromising quality."
+        },
+        "step2": {
+          "title": "Travel Planning",
+          "description": "We arrange your visa, flights, accommodation, and local transportation."
+        },
+        "step3": {
+          "title": "Arrival & Welcome",
+          "description": "Airport pickup and settling into comfortable accommodations near the hospital."
+        },
+        "step4": {
+          "title": "Medical Care",
+          "description": "Comprehensive treatment with our expert medical team using advanced facilities."
+        },
+        "step5": {
+          "title": "Recovery & Follow-up",
+          "description": "Post-treatment care, recovery monitoring, and continued support back home."
+        }
+      }
+    },
+    "services": {
+      "subtitle": "Our Services",
+      "title": "Comprehensive Medical Tourism Packages",
+      "items": {
+        "surgical": {
+          "title": "Surgical Procedures",
+          "description": "Comprehensive surgical care including orthopedic, general surgery, and minimally invasive procedures with complete pre and post-operative support.",
+          "features": [
+            "Pre-surgery consultation",
+            "Advanced surgical facilities",
+            "Recovery accommodation",
+            "Post-operative care",
+            "Follow-up support"
+          ]
+        },
+        "diagnostic": {
+          "title": "Diagnostic & Consultation",
+          "description": "Comprehensive health assessments, second opinions, and advanced diagnostic testing using state-of-the-art imaging and laboratory facilities.",
+          "features": [
+            "Full health screening",
+            "Specialist consultations",
+            "Advanced diagnostics",
+            "Detailed reports",
+            "Treatment planning"
+          ]
+        },
+        "wellness": {
+          "title": "Wellness Programs",
+          "description": "Preventive care and wellness packages designed for health optimization."
+        },
+        "chronicCare": {
+          "title": "Chronic Care Management",
+          "description": "Long-term treatment plans for ongoing health conditions with regular monitoring."
+        },
+        "emergency": {
+          "title": "Emergency Services",
+          "description": "24/7 emergency care and ICU facilities for urgent medical needs."
+        }
+      }
+    },
+    "care": {
+      "title": "Everything You Need, All Taken Care Of",
+      "description": "Focus on your recovery while we handle all the details. Our comprehensive packages ensure a stress-free medical journey from start to finish.",
+      "items": {
+        "travel": {
+          "title": "Travel Coordination",
+          "description": "Visa assistance, flight booking, and airport transfers."
+        },
+        "accommodation": {
+          "title": "Accommodation",
+          "description": "Comfortable hotel stays near the hospital."
+        },
+        "language": {
+          "title": "Language Support",
+          "description": "Multilingual coordinators and translators."
+        },
+        "documentation": {
+          "title": "Documentation",
+          "description": "Medical records, reports, and all paperwork."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Begin Your Health Journey?",
+      "description": "Contact our dedicated medical tourism team today for a free consultation. We're here to answer all your questions and guide you every step of the way.",
+      "buttonText": "Contact us"
+    }
+  },
   "privacyPolicy": {
     "title": "Privacy Policy",
     "sections": {

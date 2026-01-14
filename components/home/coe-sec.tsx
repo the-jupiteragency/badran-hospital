@@ -91,18 +91,18 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
                   setActiveCardIndex(index === activeCardIndex ? null : index)
                 }
                 onMouseLeave={() => setActiveCardIndex(null)}
-                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border-0 p-0 shadow-none select-none"
+                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border-0 p-0 shadow-none select-none"
               >
                 {/* Background & Base Color */}
                 <div
-                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-300 md:group-hover:bg-[#005C5D] ${
+                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-500 ease-in-out md:group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
                     isActive ? "bg-[#005C5D]" : ""
                   }`}
                 />
 
                 {/* Default State Content */}
                 <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-300 md:group-hover:opacity-0 ${
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-500 ease-in-out md:group-hover:opacity-0 group-active:opacity-0 ${
                     isActive ? "opacity-0" : ""
                   }`}
                 >
@@ -122,7 +122,7 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
 
                 {/* Hover State Content */}
                 <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-300 opacity-0 md:group-hover:opacity-100 ${
+                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-500 ease-in-out opacity-0 md:group-hover:opacity-100 group-active:opacity-100 ${
                     isActive ? "opacity-100" : ""
                   }`}
                 >
