@@ -29,23 +29,81 @@
       "specialties": {
         "cardiology": {
           "title": "Cardiology",
-          "description": "Comprehensive heart care supported by advanced diagnostics and expert cardiologists."
+          "description": "Advanced heart care with top cardiologists and state-of-the-art diagnostics.",
+          "subDescription": "The Cardiology Center provides comprehensive cardiac services that covering early detection, advanced treatment, and 24/7 emergency support. Our specialists use the latest technologies to ensure accurate assessments and timely interventions.",
+          "servicesTitle": "Our Services:",
+          "services": [
+            "ECG, <strong>Echocardiography</strong> & Stress Tests",
+            "<strong>Holter Monitoring</strong> (24–48 hours)",
+            "<strong>CT Coronary</strong> Angiography",
+            "Cardiac <strong>Catheterization</strong> (Cath Lab)",
+            "Management of <strong>coronary artery disease</strong>",
+            "Treatment of <strong>arrhythmias & hypertension</strong>",
+            "<strong>Heart failure</strong> & valve disease management",
+            "<strong>Emergency</strong> chest pain care",
+            "<strong>Long-term follow-up</strong> and prevention programs"
+          ]
         },
         "oncology": {
           "title": "Oncology",
-          "description": "State-of-the-art cancer treatment with a compassionate, multidisciplinary approach."
+          "description": "Compassionate cancer care powered by expert oncologists and evidence-based treatment pathways.",
+          "subDescription": "Our Oncology Center offers full-spectrum cancer management with a strong focus on patient safety, comfort, and emotional support. We combine accurate diagnostics, modern therapies, and multidisciplinary follow-up programs.",
+          "servicesTitle": "Our Services:",
+          "services": [
+            "<strong>Cancer</strong> diagnosis & staging",
+            "<strong>Chemotherapy administration</strong>",
+            "<strong>Hormonal & targeted therapies</strong>",
+            "Full <strong>diagnostic support</strong> (lab, CT, ultrasound)",
+            "<strong>Private</strong> infusion suites",
+            "<strong>Oncology-trained</strong> nursing team",
+            "<strong>Nutritional & psychological support</strong>",
+            "<strong>Post-treatment follow-up</strong> and palliative care",
+            "<strong>Inpatient & ICU support</strong> for complex cases"
+          ]
         },
-        "plasticSurgery": {
-          "title": "Plastic Surgery",
-          "description": "Restoring form and function with expert cosmetic and reconstructive surgical procedures."
+        "oneDaySurgery": {
+          "title": "One-Day Surgery",
+          "description": "Efficient, safe surgical procedures enabling same-day discharge with expert medical supervision.",
+          "subDescription": "The One-Day Surgery Center is designed for procedures that allow patients to return home the same day. With streamlined workflows, modern operating rooms, and dedicated recovery care, we ensure safety, comfort, and continuity.",
+          "servicesTitle": "Our Services:",
+          "services": [
+            "<strong>Day-case surgical procedures</strong>",
+            "<strong>Minimally invasive surgeries</strong>",
+            "<strong>Anesthesia and recovery supervision</strong>",
+            "<strong>Short-stay post-operative monitoring</strong>",
+            "<strong>Pain management and discharge planning</strong>",
+            "<strong>Scheduled follow-up and recovery guidance</strong>"
+          ]
         },
-        "orthopedics": {
-          "title": "Orthopedics",
-          "description": "Advanced care for bones, joints, and muscles to restore mobility and quality of life."
+        "generalSurgery": {
+          "title": "General Surgery",
+          "description": "Safe, effective surgical care delivered by experienced surgeons using modern, evidence-based techniques.",
+          "subDescription": "The General Surgery Center provides comprehensive surgical services for a wide range of conditions. Our approach prioritizes patient safety, precise surgical outcomes, and coordinated pre- and post-operative care.",
+          "servicesTitle": "Our Services:",
+          "services": [
+            "<strong>General & Laparoscopic surgery</strong>",
+            "<strong>Hernia repair procedures</strong>",
+            "<strong>Gallbladder & appendix surgery</strong>",
+            "<strong>Breast & soft tissue surgery</strong>",
+            "<strong>Thyroid and endocrine surgery</strong>",
+            "<strong>Pre-operative assessment & post-operative follow-up</strong>"
+          ]
         },
         "gastroenterology": {
           "title": "Gastroenterology",
-          "description": "Expert diagnosis and treatment for digestive system disorders and liver conditions."
+          "description": "Expert digestive health care with advanced endoscopy and fast, safe procedures.",
+          "subDescription": "The Gastroenterology Center provides complete diagnostic and therapeutic services for diseases of the stomach, intestines, liver, pancreas, and biliary system—supported by modern endoscopy suites and strict sterilization protocols.",
+          "servicesTitle": "Our Services:",
+          "services": [
+            "Upper & lower GI <strong>endoscopy</strong>",
+            "<strong>Polyp removal & biopsies</strong>",
+            "<strong>Treatment of GI bleeding</strong>",
+            "Diagnosis & management of <strong>liver & biliary diseases</strong>",
+            "<strong>Pancreatic disease evaluation</strong>",
+            "<strong>Early GI cancer detection</strong>",
+            "<strong>Radiology & laboratory</strong> collaboration for accurate diagnosis",
+            "<strong>High-standard endoscope</strong> cleaning & sterilization"
+          ]
         }
       }
     },
@@ -97,6 +155,14 @@
     "gallery": {
       "subtitle": "Our Legacy",
       "title": "Expertise, and deep respect for every patient."
+    }
+  },
+  "coePage": {
+    "hero": {
+      "subtitle": "Where expertise meets advanced care.",
+      "title": "Centers of Excellence",
+      "description": "At Badran Hospital, our Centers of Excellence combine highly experienced consultants, advanced medical technologies, and patient-centered care models. Each center is led by specialized teams committed to accurate diagnosis, effective treatment, and safe, comfortable patient experiences.",
+      "overview": "Below is an overview of our Center of Excellence..."
     }
   },
   "about": {

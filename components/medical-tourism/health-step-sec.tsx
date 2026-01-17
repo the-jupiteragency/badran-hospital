@@ -141,8 +141,8 @@ export const HealthStepSec = ({ dict, lang }: HealthStepSecProps) => {
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-2 ">
-                    <h3 className="text-lg font-extrabold text-[#274760] ">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-extrabold text-[#274760] xl:w-2/3">
                       {item.title}
                     </h3>
                     <p className="text-[#274760] text-sm leading-relaxed text-balance ">

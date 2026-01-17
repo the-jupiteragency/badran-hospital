@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 type CoeDict = {
   subtitle: string;
@@ -12,38 +13,49 @@ type CoeDict = {
   specialties: {
     cardiology: { title: string; description: string };
     oncology: { title: string; description: string };
-    plasticSurgery: { title: string; description: string };
-    orthopedics: { title: string; description: string };
+    oneDaySurgery: { title: string; description: string };
+    generalSurgery: { title: string; description: string };
     gastroenterology: { title: string; description: string };
   };
 };
 
-export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
+export function CenterOfExcellence({
+  dict,
+  lang,
+}: {
+  dict: CoeDict;
+  lang: string;
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
 
   const specialties = [
     {
+      key: "cardiology",
       title: dict.specialties.cardiology.title,
       icon: "/icons/icon-3.svg",
       description: dict.specialties.cardiology.description,
     },
     {
+      key: "oncology",
       title: dict.specialties.oncology.title,
       icon: "/icons/icon-4.svg",
       description: dict.specialties.oncology.description,
     },
     {
-      title: dict.specialties.plasticSurgery.title,
+      key: "oneDaySurgery",
+      title: dict.specialties.oneDaySurgery.title,
       icon: "/icons/icon-5.svg",
-      description: dict.specialties.plasticSurgery.description,
+      description: dict.specialties.oneDaySurgery.description,
     },
     {
-      title: dict.specialties.orthopedics.title,
+      key: "generalSurgery",
+      title: dict.specialties.generalSurgery.title,
       icon: "/icons/icon-6.svg",
-      description: dict.specialties.orthopedics.description,
+      description: dict.specialties.generalSurgery.description,
     },
     {
+      key: "gastroenterology",
       title: dict.specialties.gastroenterology.title,
       icon: "/icons/icon-7.svg",
       description: dict.specialties.gastroenterology.description,
@@ -71,9 +83,11 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
 
         {/* Desktop Button (Above Cards) */}
         <div className="hidden md:flex justify-center mb-12">
-          <Button className="bg-[#0499AB] text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md transition-all hover:-translate-y-0.5">
-            {dict.buttonText}
-          </Button>
+          <Link href={`/${lang}/center-of-excellence`}>
+            <Button className="bg-[#0499AB] text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md transition-all hover:-translate-y-0.5">
+              {dict.buttonText}
+            </Button>
+          </Link>
         </div>
 
         {/* Cards Container */}
@@ -85,78 +99,85 @@ export function CenterOfExcellence({ dict }: { dict: CoeDict }) {
           {specialties.map((specialty, index) => {
             const isActive = activeCardIndex === index;
             return (
-              <Card
-                key={specialty.title}
-                onClick={() =>
-                  setActiveCardIndex(index === activeCardIndex ? null : index)
-                }
-                onMouseLeave={() => setActiveCardIndex(null)}
-                className="shrink-0 w-[200px] md:w-auto snap-center group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border-0 p-0 shadow-none select-none"
+              <Link
+                key={specialty.key}
+                href={`/${lang}/center-of-excellence#${specialty.key}`}
+                className="shrink-0 w-[200px] md:w-auto snap-center"
               >
-                {/* Background & Base Color */}
-                <div
-                  className={`absolute inset-0 bg-[#007F80] transition-colors duration-500 ease-in-out md:group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
-                    isActive ? "bg-[#005C5D]" : ""
-                  }`}
-                />
-
-                {/* Default State Content */}
-                <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-500 ease-in-out md:group-hover:opacity-0 group-active:opacity-0 ${
-                    isActive ? "opacity-0" : ""
-                  }`}
+                <Card
+                  onClick={() =>
+                    setActiveCardIndex(index === activeCardIndex ? null : index)
+                  }
+                  onMouseLeave={() => setActiveCardIndex(null)}
+                  className="group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border-0 p-0 shadow-none select-none h-full"
                 >
-                  {/* Icon Top Left */}
-                  <div>
-                    <img
-                      src={specialty.icon}
-                      alt={specialty.title}
-                      className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert pointer-events-none"
-                    />
-                  </div>
-                  {/* Title Bottom Left */}
-                  <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
-                    {specialty.title}
-                  </h3>
-                </div>
+                  {/* Background & Base Color */}
+                  <div
+                    className={`absolute inset-0 bg-[#007F80] transition-colors duration-500 ease-in-out md:group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
+                      isActive ? "bg-[#005C5D]" : ""
+                    }`}
+                  />
 
-                {/* Hover State Content */}
-                <div
-                  className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-500 ease-in-out opacity-0 md:group-hover:opacity-100 group-active:opacity-100 ${
-                    isActive ? "opacity-100" : ""
-                  }`}
-                >
-                  {/* Watermark Icon */}
-                  <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
-                    <img
-                      src={specialty.icon}
-                      alt="icon"
-                      className="w-64 h-64 brightness-0 invert"
-                    />
-                  </div>
-
-                  {/* Header Row: Title + Arrow */}
-                  <div className="flex justify-between items-start w-full mb-auto relative z-10">
-                    <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">
+                  {/* Default State Content */}
+                  <div
+                    className={`absolute inset-0 p-6 md:p-4 flex flex-col justify-between transition-opacity duration-500 ease-in-out md:group-hover:opacity-0 group-active:opacity-0 ${
+                      isActive ? "opacity-0" : ""
+                    }`}
+                  >
+                    {/* Icon Top Left */}
+                    <div>
+                      <img
+                        src={specialty.icon}
+                        alt={specialty.title}
+                        className="w-16 h-16 md:w-20 md:h-20 brightness-0 invert pointer-events-none"
+                      />
+                    </div>
+                    {/* Title Bottom Left */}
+                    <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
                       {specialty.title}
                     </h3>
                   </div>
 
-                  {/* Description Bottom */}
-                  <p className="text-white text-sm md:text-md xl:text-lg leading-relaxed font-medium relative z-10">
-                    {specialty.description}
-                  </p>
-                </div>
-              </Card>
+                  {/* Hover State Content */}
+                  <div
+                    className={`absolute inset-0 p-6 md:p-4 flex flex-col transition-opacity duration-500 ease-in-out opacity-0 md:group-hover:opacity-100 group-active:opacity-100 ${
+                      isActive ? "opacity-100" : ""
+                    }`}
+                  >
+                    {/* Watermark Icon */}
+                    <div className="absolute right-[1%] bottom-[1%] opacity-10 pointer-events-none transform  scale-120">
+                      <img
+                        src={specialty.icon}
+                        alt="icon"
+                        className="w-64 h-64 brightness-0 invert"
+                      />
+                    </div>
+
+                    {/* Header Row: Title + Arrow */}
+                    <div className="flex justify-between items-start w-full mb-auto relative z-10">
+                      <h3 className="text-white font-bold text-md md:text-lg xl:text-xl">
+                        {specialty.title}
+                      </h3>
+                    </div>
+
+                    {/* Description Bottom */}
+                    <p className="text-white text-sm md:text-md xl:text-lg leading-relaxed font-medium relative z-10">
+                      {specialty.description}
+                    </p>
+                  </div>
+                </Card>
+              </Link>
             );
           })}
         </div>
 
         {/* Mobile Button (Below Cards) */}
         <div className="flex md:hidden justify-center mt-8">
-          <Button className="w-full bg-[#0499AB] text-white py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md">
-            {dict.buttonText}
-          </Button>
+          <Link href={`/${lang}/center-of-excellence`} className="w-full">
+            <Button className="w-full bg-[#0499AB] text-white py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md">
+              {dict.buttonText}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

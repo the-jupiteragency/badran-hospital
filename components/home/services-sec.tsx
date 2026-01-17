@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { Card } from "@/components/ui/card"
+import Image from "next/image";
+import { Card } from "@/components/ui/card";
 
 type ServicesDict = {
   subtitle: string;
@@ -42,7 +42,7 @@ export function MedicalServices({ dict }: { dict: ServicesDict }) {
     {
       title: dict.items.laboratory.title,
       description: dict.items.laboratory.description,
-      icon: "/icons/icon-14.svg",
+      icon: "/icons/icon-10.svg",
     },
     {
       title: dict.items.emergency.title,
@@ -65,13 +65,13 @@ export function MedicalServices({ dict }: { dict: ServicesDict }) {
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center max-w-sm md:max-w-2xl mx-auto mb-8 md:mb-12">
-          <p className="text-[#388AA3] font-medium text-md md:text-base mb-2">{dict.subtitle}</p>
+          <p className="text-[#388AA3] font-medium text-md md:text-base mb-2">
+            {dict.subtitle}
+          </p>
           <h2 className="text-[#12323A] text-3xl md:text-4xl lg:text-5xl  mb-4 text-balance">
             {dict.title}
           </h2>
-          <p className=" text-md md:text-base font-light">
-            {dict.description}
-          </p>
+          <p className=" text-md md:text-base font-light">{dict.description}</p>
         </div>
 
         {/* Services Grid / Mobile Carousel */}
@@ -109,5 +109,5 @@ export function MedicalServices({ dict }: { dict: ServicesDict }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

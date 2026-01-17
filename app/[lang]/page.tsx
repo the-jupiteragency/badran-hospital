@@ -22,7 +22,7 @@ export default async function Page({
     <main className="min-h-screen">
       <HeroSection dict={dict.home.hero} lang={lang} />
       <AboutSection dict={dict.home.about} lang={lang} />
-      <CenterOfExcellence dict={dict.home.coe} />
+      <CenterOfExcellence dict={dict.home.coe} lang={lang} />
       <MedicalServices dict={dict.home.services} />
       <HealthHub dict={dict.home.healthHub} lang={lang} />
       <HospitalGallery dict={dict.home.gallery} lang={lang} />
