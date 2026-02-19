@@ -96,11 +96,11 @@ export default async function BlogPostPage({
           <Button
             variant="ghost"
             asChild
-            className="pl-0 text-[#12323A]/70 hover:text-[#0FA5A1] hover:bg-transparent transition-colors"
+            className=" text-[#12323A]/70 hover:text-[#0FA5A1] hover:bg-transparent transition-colors"
           >
             <Link href={`/${lang}/health-hub`}>
               <ArrowLeft
-                className={`h-4 w-4 ${lang === "ar" ? "ml-2 rotate-180" : "mr-2"}`}
+                className={`h-4 w-4 ${lang === "ar" ? "ml-1 rotate-180" : "mr-1"}`}
               />
               {dict.nav?.healthHub || "Back to Health Hub"}
             </Link>
@@ -108,7 +108,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* White Post Card */}
-        <article className="bg-white rounded-4xl shadow-sm p-6 md:p-12 animate-in fade-in duration-500 border border-gray-100/50">
+        <article className="bg-white rounded-md shadow-sm p-6 md:p-12 animate-in fade-in duration-500 border border-gray-100/50">
           {/* Header */}
           <header className="mb-10 space-y-4">
             {post.specialties && (

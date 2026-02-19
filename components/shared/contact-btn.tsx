@@ -82,8 +82,8 @@ export function ContactButton({ className, lang = "en" }: ContactButtonProps) {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             dir={isRtl ? "rtl" : "ltr"}
-            className={`fixed bottom-12 w-[calc(100vw-2rem)] sm:w-[380px] max-h-[80vh] bg-white rounded-2xl shadow-2xl z-100 flex flex-col font-sans border border-gray-100/50 ${
-              isRtl ? "left-4 sm:left-20" : "right-4 sm:right-20"
+            className={`fixed bottom-12 w-[calc(100vw-2rem)] sm:w-[380px] max-h-[80vh]  rounded-2xl  z-100 flex flex-col font-sans border border-gray-100/50 ${
+              isRtl ? "left-1 sm:left-20" : "right-1 sm:right-20"
             }`}
             style={{ boxShadow: "0 10px 40px -10px rgba(0,0,0,0.25)" }}
           >
@@ -238,7 +238,7 @@ export function ContactButton({ className, lang = "en" }: ContactButtonProps) {
             </div>
 
             {/* ── FAQ Question Buttons ── */}
-            <div className="p-3 bg-white border-t border-gray-100 max-h-[220px] overflow-y-auto shrink-0">
+            <div className="p-3 bg-white border-t rounded-b-2xl border-gray-100 max-h-[220px] overflow-y-auto shrink-0">
               <p className="text-[10px] font-semibold text-gray-400 mb-2 px-1 uppercase tracking-wider">
                 {isRtl ? "اختر سؤالاً" : "Choose a question"}
               </p>
