@@ -151,9 +151,6 @@ export async function HealthHub({
         {/* Header */}
         <div className="flex flex-col mb-8 md:mb-10 relative">
           <div className="text-center md:text-start">
-            <p className="text-[#388AA3] font-medium text-md mb-2">
-              {dict.subtitle}
-            </p>
             <h2 className="text-[#12323A] text-4xl md:text-3xl lg:text-4xl">
               {dict.title}
             </h2>
