@@ -58,8 +58,8 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
         isOpen
           ? "bg-[#0E7C7B]"
           : isScrolled
-          ? "bg-[#0E7C7B]/95 backdrop-blur-sm shadow-lg "
-          : "bg-[#E2F0F7]"
+            ? "bg-linear-to-br from-[#008DC3] to-[#004268] shadow-lg"
+            : "bg-[#E2F0F7]"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 relative z-50">

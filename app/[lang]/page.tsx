@@ -24,7 +24,7 @@ export default async function Page({
       <AboutSection dict={dict.home.about} lang={lang} />
       <CenterOfExcellence dict={dict.home.coe} lang={lang} />
       <MedicalServices dict={dict.home.services} />
-      <HealthHub dict={dict.home.healthHub} lang={lang} />
+      <HealthHub dict={dict.healthHub} lang={lang} />
       <HospitalGallery dict={dict.home.gallery} lang={lang} />
     </main>
   );

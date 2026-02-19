@@ -76,7 +76,7 @@ export function CenterOfExcellence({
           <h2 className="text-[#0E2E3B] text-3xl md:text-5xl font-light mb-6">
             {dict.title}
           </h2>
-          <p className=" text-sm md:text-lg leading-relaxed max-w-xl font-light mx-auto">
+          <p className=" text-sm md:text-lg leading-relaxed max-w-2xl font-light mx-auto">
             {dict.description}
           </p>
         </div>
@@ -84,7 +84,12 @@ export function CenterOfExcellence({
         {/* Desktop Button (Above Cards) */}
         <div className="hidden md:flex justify-center mb-12">
           <Link href={`/${lang}/center-of-excellence`}>
-            <Button className="bg-[#0499AB] text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md transition-all hover:-translate-y-0.5">
+            <Button
+              className="text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md transition-all hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(to right, #008DC3, #004268)",
+              }}
+            >
               {dict.buttonText}
             </Button>
           </Link>
@@ -102,20 +107,21 @@ export function CenterOfExcellence({
               <Link
                 key={specialty.key}
                 href={`/${lang}/center-of-excellence#${specialty.key}`}
-                className="shrink-0 w-[200px] md:w-auto snap-center"
+                className="shrink-0 w-50 md:w-auto snap-center"
               >
                 <Card
                   onClick={() =>
                     setActiveCardIndex(index === activeCardIndex ? null : index)
                   }
                   onMouseLeave={() => setActiveCardIndex(null)}
-                  className="group relative aspect-4/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border-0 p-0 shadow-none select-none h-full"
+                  className="group relative aspect-5/6 rounded-xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border-0 p-0 shadow-none select-none h-full"
                 >
                   {/* Background & Base Color */}
                   <div
-                    className={`absolute inset-0 bg-[#007F80] transition-colors duration-500 ease-in-out md:group-hover:bg-[#005C5D] group-active:bg-[#005C5D] ${
-                      isActive ? "bg-[#005C5D]" : ""
-                    }`}
+                    className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+                    style={{
+                      background: "linear-gradient(to right, #008DC3, #004268)",
+                    }}
                   />
 
                   {/* Default State Content */}
@@ -174,7 +180,12 @@ export function CenterOfExcellence({
         {/* Mobile Button (Below Cards) */}
         <div className="flex md:hidden justify-center mt-8">
           <Link href={`/${lang}/center-of-excellence`} className="w-full">
-            <Button className="w-full bg-[#0499AB] text-white py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md">
+            <Button
+              className="w-full text-white py-6 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
+              style={{
+                background: "linear-gradient(to right, #008DC3, #004268)",
+              }}
+            >
               {dict.buttonText}
             </Button>
           </Link>

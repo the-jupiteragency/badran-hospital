@@ -31,22 +31,27 @@ export function AboutSection({
           </div>
 
           {/* Text Side */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-6 md:gap-8">
+          <div className="w-full md:w-[58%] flex flex-col items-center md:items-start gap-6 md:gap-8">
             <div className="relative">
               <p
-                className={`text-[#063458] text-lg md:text-2xl lg:text-[26px] leading-normal tracking-wide font-mono text-balance text-center ${
+                className={`text-[#063458] text-lg md:text-2xl lg:text-3xl leading-normal tracking-wide font-mono text-balance ${
                   lang === "ar" ? "md:text-right" : "md:text-left"
                 }`}
               >
-                {dict.quote}
+                {lang === "ar"
+                  ? dict.quote
+                  : `Professor Dr. Ibrahim Badran (1924–2015) was a pioneering Egyptian surgeon and academic. He served as Egypt’s Minister of Health (1976–1978) and President of Cairo University (1978–1980). Renowned as the “father of surgery in Egypt,” he authored seven books and over 120 scientific papers.`}
               </p>
             </div>
 
             <Button
               asChild
-              className="w-full md:w-auto bg-[#0499AB] text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg transition-transform "
+              className="w-full md:w-auto text-white px-10 py-6 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg transition-all hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(to right, #008DC3, #004268)",
+              }}
             >
-              <Link href="/about">{dict.buttonText}</Link>
+              <Link href={`/${lang}/about`}>{dict.buttonText}</Link>
             </Button>
           </div>
         </div>

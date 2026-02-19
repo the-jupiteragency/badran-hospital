@@ -48,7 +48,7 @@ export function CollapsibleBtn({ lang }: { lang: string }) {
           <span className="bg-white/90 text-gray-700 text-xs py-1 px-2 rounded-md shadow-sm">
             WhatsApp
           </span>
-          <WhatsAppButton className="shadow-lg rounded-full bg-white p-1" />
+          <WhatsAppButton className="rounded-full" />
         </div>
 
         <div
@@ -59,14 +59,14 @@ export function CollapsibleBtn({ lang }: { lang: string }) {
           <span className="bg-white/90 text-gray-700 text-xs py-1 px-2 rounded-md shadow-sm">
             Chatbot
           </span>
-          <ContactButton className="w-[52px] h-[52px] p-0!" />
+          <ContactButton className="w-[52px] h-[52px] p-0!" lang={lang} />
         </div>
       </div>
 
       {/* Main Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-[60px] h-[60px] rounded-full shadow-xl flex items-center justify-center transition-all duration-300 ${
+        className={`w-[52px] h-[52px] rounded-full shadow-xl flex items-center justify-center transition-all duration-300 ${
           isOpen ? "bg-red-500 rotate-90" : "bg-[#0FA5A1] hover:scale-105"
         }`}
         aria-label="Toggle Support Menu"

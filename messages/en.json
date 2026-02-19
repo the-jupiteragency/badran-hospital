@@ -18,7 +18,7 @@
     },
 
     "about": {
-      "quote": "Dr. Ibrahim Badran always believed that a hospital should serve its community with Honesty, Compassion, and Responsibility.",
+      "quote": "Professor Dr. Ibrahim Badran (1924–2015) was a pioneering Egyptian surgeon and academic. He served as Egypt's Minister of Health (1976–1978) and President of Cairo University (1978–1980). Renowned as the \"father of surgery in Egypt,\" he authored seven books and over 120 scientific papers.",
       "buttonText": "About Us"
     },
     "coe": {
@@ -146,16 +146,22 @@
         }
       }
     },
-    "healthHub": {
-      "subtitle": "Read the latest",
-      "title": "Health Hub",
-      "viewAll": "View all",
-      "learnMore": "Learn more"
-    },
+
     "gallery": {
       "subtitle": "Our Legacy",
       "title": "Expertise, and deep respect for every patient."
     }
+  },
+  "healthHub": {
+    "subtitle": "Explore our blog for expert advice and heartwarming stories from our trusted vets! Whether you're looking for tips on pet care, nutrition, or just want to learn more about your furry friend.",
+    "title": "Health Hub",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "searchPlaceholder": "Search articles...",
+    "filterSpecialty": "Filter by specialty",
+    "allSpecialties": "All Specialties",
+    "readMore": "Read More",
+    "publishedOn": "Published on"
   },
   "coePage": {
     "hero": {
@@ -164,6 +170,10 @@
       "description": "At Badran Hospital, our Centers of Excellence combine highly experienced consultants, advanced medical technologies, and patient-centered care models. Each center is led by specialized teams committed to accurate diagnosis, effective treatment, and safe, comfortable patient experiences.",
       "overview": "Below is an overview of our Center of Excellence..."
     }
+  },
+  "findDoctorPage": {
+    "title": "Find a Doctor/Speciality",
+    "subtitle": "Search from our network of experienced healthcare professionals."
   },
   "about": {
     "hero": {
@@ -433,6 +443,29 @@
         "title": "Changes to Policies",
         "content": "We reserve the right to modify these policies at any time. Updates will be posted on our website."
       }
+    }
+  },
+  "contactPage": {
+    "title": "Contact us",
+    "subtitle": "Your health and safety are our priority. Find the right way to reach us for care, questions, or support.",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Type in your name...",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "(123) 456 - 789",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Type your subject here",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Type your message here...",
+      "send": "Send",
+      "success": "Your message has been sent successfully.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "hospitalAddress": "Hospital Address",
+      "phone": "Phone",
+      "email": "Email Us",
+      "location": "Our Location"
     }
   },
   "footer": {

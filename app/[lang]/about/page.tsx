@@ -23,7 +23,7 @@ export default async function AboutPage({
       <OurJourney dict={dict.about.journey} lang={lang} />
       <MissionVisionSec dict={dict.about.missionVision} />
       <OurCoreSec dict={dict.about.coreValues} />
-      <CtaSec dict={dict.about.cta} />
+      <CtaSec dict={dict.about.cta} lang={lang} />
     </main>
   );
 }

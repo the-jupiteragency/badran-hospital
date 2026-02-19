@@ -23,7 +23,7 @@ export const HeroSec = ({ dict, lang }: HeroSecProps) => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#E6F7F8] via-[#F0F9FF] to-[#EFF8FF] pt-12 md:pt-16 lg:pt-24">
+    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#E6F7F8] via-[#F0F9FF] to-[#EFF8FF] pt-12 md:pt-16 lg:pt-24 md:px-14">
       {/* Background Blobs for Atmosphere */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#147072]/5 rounded-full blur-3xl" />
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#B8DDE1]/10 rounded-full blur-3xl" />

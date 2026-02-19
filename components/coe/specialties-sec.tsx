@@ -159,14 +159,14 @@ export const SpecialtiesSec = ({ dict, lang }: SpecialtiesSecProps) => {
                 spec.key === "oncology"
                   ? "oncology"
                   : spec.key === "gastroenterology"
-                  ? "gastroenterology"
-                  : spec.key === "generalSurgery"
-                  ? "generalSurgery"
-                  : spec.key === "oneDaySurgery"
-                  ? "oneDaySurgery"
-                  : spec.key === "cardiology"
-                  ? "cardiology"
-                  : "cardiology";
+                    ? "gastroenterology"
+                    : spec.key === "generalSurgery"
+                      ? "generalSurgery"
+                      : spec.key === "oneDaySurgery"
+                        ? "oneDaySurgery"
+                        : spec.key === "cardiology"
+                          ? "cardiology"
+                          : "cardiology";
               const icons = (servicesIcons as any)[itemsKey] || [];
 
               // Fallback icons if specific set not defined but needed for visual placeholder

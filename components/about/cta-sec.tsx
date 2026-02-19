@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 type CtaDict = {
   title: string;
   subtitle: string;
   buttonText: string;
 };
 
-export function CtaSec({ dict }: { dict: CtaDict }) {
+export function CtaSec({ dict, lang }: { dict: CtaDict; lang: string }) {
   return (
     <section className="w-full py-10 lg:py-20 bg-linear-to-br from-[#0066A2] to-[#79B3E6] md:bg-none md:bg-[#DCECF9]">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -18,9 +20,12 @@ export function CtaSec({ dict }: { dict: CtaDict }) {
             {dict.subtitle}
           </p>
 
-          <button className="bg-white text-[#0066A2] font-bold text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-4 rounded-full hover:bg-gray-50 transition-colors shadow-sm">
+          <Link
+            href={`/${lang}/find-a-doctor`}
+            className="inline-block bg-white text-[#0066A2] font-bold text-base lg:text-lg px-8 py-3 lg:px-10 lg:py-4 rounded-full hover:bg-gray-50 transition-colors shadow-sm"
+          >
             {dict.buttonText}
-          </button>
+          </Link>
         </div>
       </div>
     </section>

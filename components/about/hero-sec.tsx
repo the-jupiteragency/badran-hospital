@@ -62,7 +62,7 @@ export function HeroSec({ dict, lang }: { dict: HeroDict; lang: string }) {
             </div>
 
             {/* Stats Pills */}
-            <div className="flex flex-wrap gap-2 md:gap-4 mt-2 w-[350px] lg:w-auto">
+            <div className="flex flex-wrap gap-2 md:gap-4 mt-2 w-87.5 lg:w-auto">
               {stats.map((stat, index) => (
                 <div
                   key={index}

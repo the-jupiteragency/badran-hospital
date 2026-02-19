@@ -6,6 +6,7 @@ import { Footer } from "@/components/shared/footer-sec";
 import { CollapsibleBtn } from "@/components/shared/collapsible-btn";
 import { getDictionary, hasLocale } from "@/app/dictionaries";
 import { notFound } from "next/navigation";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -19,14 +20,16 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  
+
   return {
-    title: lang === "ar" 
-      ? "مستشفى بدران - حيث تلتقي الخبرة بالرعاية المتقدمة"
-      : "Badran Hospital - Where Expertise Meets Advanced Care",
-    description: lang === "ar"
-      ? "يقدم مستشفى بدران رعاية طبية احترافية وإنسانية مع أكثر من 45 عامًا من الخدمة الموثوقة. ابحث عن أفضل المتخصصين في أمراض القلب والأورام والعظام والمزيد."
-      : "Badran Hospital provides professional, humane medical care with over 45 years of trusted service. Find top specialists in Cardiology, Oncology, Orthopedics, and more.",
+    title:
+      lang === "ar"
+        ? "مستشفى بدران - حيث تلتقي الخبرة بالرعاية المتقدمة"
+        : "Badran Hospital - Where Expertise Meets Advanced Care",
+    description:
+      lang === "ar"
+        ? "يقدم مستشفى بدران رعاية طبية احترافية وإنسانية مع أكثر من 45 عامًا من الخدمة الموثوقة. ابحث عن أفضل المتخصصين في أمراض القلب والأورام والعظام والمزيد."
+        : "Badran Hospital provides professional, humane medical care with over 45 years of trusted service. Find top specialists in Cardiology, Oncology, Orthopedics, and more.",
   };
 }
 
@@ -50,10 +53,12 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
       <body className={`${poppins.variable} antialiased`}>
-        <Navbar lang={lang} dict={dict.nav} />
-        {children}
-        <Footer dict={dict.footer} lang={lang} />
-        <CollapsibleBtn lang={lang} />
+        <NuqsAdapter>
+          <Navbar lang={lang} dict={dict.nav} />
+          {children}
+          <Footer dict={dict.footer} lang={lang} />
+          <CollapsibleBtn lang={lang} />
+        </NuqsAdapter>
       </body>
     </html>
   );

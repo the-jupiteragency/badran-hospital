@@ -1,0 +1,145 @@
+{
+  "data": [
+    {
+      "id": 5,
+      "documentId": "a14ylahclwsxhuqxcklpqhk0",
+      "title": "Early Signs of Breast Cancer Every Woman Should Know",
+      "specialties": "oncology",
+      "kind": "health tips",
+      "slug": "early-signs-of-breast-cancer",
+      "body": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Breast cancer is the most common cancer affecting women worldwide, yet early detection significantly increases survival rates.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Warning signs include:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "• A new lump in the breast or underarm",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "• Changes in breast shape or size",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "• Skin dimpling",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "• Nipple discharge",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "• Persistent breast pain",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Importantly, many breast cancers develop without pain.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Regular screening — including mammography and clinical exams — allows doctors to detect tumors before symptoms appear.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Women aged 40 and above should discuss screening schedules with their physician, while those with a family history may need earlier evaluation.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Modern oncology care focuses not only on survival but also on preserving quality of life through minimally invasive treatments and personalized therapy plans.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "At Badran Hospital, comprehensive breast care combines advanced imaging, expert oncologists, and coordinated treatment pathways.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Early detection saves lives — do not postpone your screening.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-02-16T19:43:19.801Z",
+      "updatedAt": "2026-02-16T20:13:37.092Z",
+      "publishedAt": "2026-02-16T20:13:36.344Z",
+      "locale": "en",
+      "banner": null,
+      "localizations": []
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 9
+    }
+  }
+}

@@ -1,11 +1,7 @@
 "use client";
 
-import type React from "react";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 
 type FooterDict = {
   description: string;
@@ -40,7 +36,7 @@ const getFooterLinks = (dict: FooterDict["links"]) => ({
   column2: [
     { label: dict.careers, href: "/careers" },
     { label: dict.contactUs, href: "/contact" },
-    { label: dict.faqs, href: "/faqs" },
+    { label: dict.faqs, href: "/faq" },
     { label: dict.privacyPolicy, href: "/privacy-policy" },
     { label: dict.termsConditions, href: "/terms-conditions" },
   ],
@@ -100,7 +96,7 @@ export function Footer({ dict, lang }: { dict: FooterDict; lang: string }) {
                 height={26}
                 className="mt-1 shrink-0"
               />
-              <span className="text-[#1A3B5C] leading-relaxed group-hover:text-[#0097A7] transition-colors whitespace-nowrap">
+              <span className="text-[#1A3B5C] leading-relaxed group-hover:text-[#0097A7] transition-colors xl:whitespace-nowrap">
                 {dict.contact.address}
               </span>
             </Link>
@@ -212,7 +208,7 @@ export function Footer({ dict, lang }: { dict: FooterDict; lang: string }) {
             <p className="text-[#1A3B5C] text-sm text-center md:text-right">
               {dict.copyright.replace(
                 "{year}",
-                new Date().getFullYear().toString()
+                new Date().getFullYear().toString(),
               )}
             </p>
           </div>
