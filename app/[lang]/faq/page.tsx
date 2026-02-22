@@ -22,7 +22,7 @@ export default async function FAQPage({
   const isAr = lang === "ar";
 
   return (
-    <div className="min-h-screen bg-[#F0F8FF] py-20 px-4 md:px-8">
+    <div className="min-h-screen bg-[#F0F8FF] py-20 md:py-32 px-4 md:px-8">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">

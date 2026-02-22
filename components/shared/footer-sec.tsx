@@ -25,20 +25,20 @@ type FooterDict = {
   };
 };
 
-const getFooterLinks = (dict: FooterDict["links"]) => ({
+const getFooterLinks = (dict: FooterDict["links"], lang: string) => ({
   column1: [
-    { label: dict.aboutUs, href: "/about" },
-    { label: dict.healthHub, href: "/health-hub" },
-    { label: dict.findDoctor, href: "/doctors" },
-    { label: dict.findSpeciality, href: "/specialities" },
-    { label: dict.medicalTourism, href: "/medical-tourism" },
+    { label: dict.aboutUs, href: `/${lang}/about` },
+    { label: dict.healthHub, href: `/${lang}/health-hub` },
+    { label: dict.findDoctor, href: `/${lang}/find-a-doctor` },
+    { label: dict.findSpeciality, href: `/${lang}/find-a-doctor` },
+    { label: dict.medicalTourism, href: `/${lang}/medical-tourism` },
   ],
   column2: [
-    { label: dict.careers, href: "/careers" },
-    { label: dict.contactUs, href: "/contact" },
-    { label: dict.faqs, href: "/faq" },
-    { label: dict.privacyPolicy, href: "/privacy-policy" },
-    { label: dict.termsConditions, href: "/terms-conditions" },
+    { label: dict.careers, href: `/${lang}/contact` },
+    { label: dict.contactUs, href: `/${lang}/contact` },
+    { label: dict.faqs, href: `/${lang}/faq` },
+    { label: dict.privacyPolicy, href: `/${lang}/privacy-policy` },
+    { label: dict.termsConditions, href: `/${lang}/terms-conditions` },
   ],
 });
 
@@ -61,7 +61,7 @@ const socialLinks = [
 ];
 
 export function Footer({ dict, lang }: { dict: FooterDict; lang: string }) {
-  const footerLinks = getFooterLinks(dict.links);
+  const footerLinks = getFooterLinks(dict.links, lang);
   return (
     <footer className="bg-linear-to-b from-[#B2EBF2] to-[#80DEEA]">
       {/* Main Footer Content */}
