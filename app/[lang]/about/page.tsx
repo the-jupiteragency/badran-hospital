@@ -1,4 +1,5 @@
 import { HeroSec } from "@/components/about/hero-sec";
+import { AboutSec } from "@/components/about/about-sec";
 import { OurJourney } from "@/components/about/our-journey";
 import { MissionVisionSec } from "@/components/about/mission-vision-sec";
 import { OurCoreSec } from "@/components/about/our-core-sec";
@@ -20,6 +21,7 @@ export default async function AboutPage({
   return (
     <main>
       <HeroSec dict={dict.about.hero} lang={lang} />
+      <AboutSec dict={dict.about.founder} lang={lang} />
       <OurJourney dict={dict.about.journey} lang={lang} />
       <MissionVisionSec dict={dict.about.missionVision} />
       <OurCoreSec dict={dict.about.coreValues} />

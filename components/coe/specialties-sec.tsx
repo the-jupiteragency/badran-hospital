@@ -20,7 +20,6 @@ const servicesIcons = {
     "/coe/icon-6.svg",
     "/coe/icon-7.svg",
     "/coe/icon-8.svg",
-    "/coe/icon-9.svg",
   ],
   oncology: [
     "/coe/icon-10.svg",
@@ -196,11 +195,16 @@ export const SpecialtiesSec = ({ dict, lang }: SpecialtiesSecProps) => {
                 >
                   <div className="space-y-8 md:space-y-10 pb-16 md:pb-24 relative">
                     {/* Text Content */}
-                    <div className="max-w-4xl space-y-8">
-                      {/* Title */}
-                      <h2 className="text-xl md:text-2xl font-bold text-[#0F3556] leading-tight md:leading-snug">
-                        {activeData.description}
+                    <div className="max-w-4xl space-y-6 md:space-y-8">
+                      {/* Mobile Title */}
+                      <h2 className="block md:hidden text-2xl font-extrabold text-[#0F3556] mb-2 leading-tight">
+                        {spec.title}
                       </h2>
+
+                      {/* Description Title */}
+                      <h3 className="text-xl md:text-2xl font-bold text-[#0F3556] leading-tight md:leading-snug">
+                        {activeData.description}
+                      </h3>
 
                       {/* Paragragh */}
                       {activeData.subDescription && (

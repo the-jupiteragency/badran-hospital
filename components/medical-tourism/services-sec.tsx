@@ -88,7 +88,7 @@ export const ServicesSec = ({ dict, lang }: ServicesSecProps) => {
           <span className="text-[#388AA3] font-medium tracking-wide uppercase text-sm md:text-base">
             {dict.subtitle}
           </span>
-          <h2 className="text-3xl md:text-5xl font-medium text-[#274760] max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-medium text-[#274760] max-w-2xl mx-auto leading-relaxed">
             {dict.title}
           </h2>
         </div>
@@ -106,7 +106,7 @@ export const ServicesSec = ({ dict, lang }: ServicesSecProps) => {
               variants={itemVariants}
               className={cn(
                 "bg-linear-to-br from-[#E6F3F9] to-[#D5EBF0]/50 p-8 rounded-sm hover:shadow-lg transition-all duration-300",
-                service.isLarge ? "lg:col-span-3" : "lg:col-span-2"
+                service.isLarge ? "lg:col-span-3" : "lg:col-span-2",
               )}
             >
               {/* Icon */}
@@ -123,7 +123,7 @@ export const ServicesSec = ({ dict, lang }: ServicesSecProps) => {
               <h3 className="text-xl md:text-2xl font-bold text-[#274760] mb-3">
                 {service.title}
               </h3>
-              <p className="text-[#274760] text-sm leading-relaxed mb-6">
+              <p className="text-[#274760] text-sm leading-relaxed mb-6 ">
                 {service.description}
               </p>
 
@@ -146,7 +146,7 @@ export const ServicesSec = ({ dict, lang }: ServicesSecProps) => {
                           {feature}
                         </span>
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               )}

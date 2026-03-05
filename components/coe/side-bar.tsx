@@ -49,16 +49,16 @@ export const SideBar = ({
             data-key={spec.key}
             onClick={() => setActiveSpecialty(spec.key)}
             className={cn(
-              "whitespace-nowrap md:whitespace-normal px-5 py-3 md:py-2 md:px-6 rounded-xl md:rounded-l-none md:rounded-r-md text-sm md:text-xl transition-all duration-300 ease-out border border-transparent shrink-0 relative",
+              "whitespace-nowrap md:whitespace-normal px-5 py-3 md:py-2 md:px-6 rounded-xl md:rounded-l-none md:rounded-r-md text-sm md:text-2xl md:leading-[1.4] transition-all duration-300 ease-out border border-transparent shrink-0 relative ",
               lang === "ar" ? "text-right" : "text-left",
               "hover:scale-[1.02] active:scale-[0.98]",
               // Mobile Styles
               activeSpecialty === spec.key
-                ? "bg-[#0E7C7B] text-white md:bg-transparent md:text-[#0E7C7B] font-bold shadow-md md:shadow-none scale-[1.02] md:scale-100"
-                : "text-gray-500 bg-white md:bg-transparent hover:bg-gray-50 hover:text-[#0E7C7B] hover:shadow-sm md:hover:shadow-none",
+                ? "bg-[#065A84] text-white md:bg-transparent md:text-[#065A84] font-extrabold shadow-md md:shadow-none scale-[1.02] md:scale-100"
+                : "text-gray-500 bg-white md:bg-transparent md:text-[#065A84] md:opacity-40 md:font-medium hover:bg-gray-50 md:hover:bg-transparent md:hover:opacity-70 hover:text-[#065A84] hover:shadow-sm md:hover:shadow-none",
               // Desktop Active Indicator (Left Border) - with animation
               activeSpecialty === spec.key &&
-                "md:before:content-[''] md:before:absolute md:before:left-[-3px] md:before:top-0 md:before:bottom-0 md:before:w-[3px] md:before:bg-[#0E7C7B] md:before:transition-all md:before:duration-300 rtl:md:before:left-auto rtl:md:before:right-[-3px]",
+                "md:before:content-[''] md:before:absolute md:before:left-[-3px] md:before:top-0 md:before:bottom-0 md:before:w-[3px] md:before:bg-[#065A84] md:before:transition-all md:before:duration-300 rtl:md:before:left-auto rtl:md:before:right-[-3px]",
             )}
           >
             {spec.title}

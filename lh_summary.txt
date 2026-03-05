@@ -1,0 +1,188 @@
+CORE WEB VITALS & METRICS:
+- First Contentful Paint (first-contentful-paint): 0.5 s
+- Largest Contentful Paint (largest-contentful-paint): 0.6 s
+- Cumulative Layout Shift (cumulative-layout-shift): 0.001
+- Total Blocking Time (total-blocking-time): 90 ms
+- Speed Index (speed-index): 2.1 s
+- Initial server response time was short (server-response-time): Root document took 100 ms
+- Time to Interactive (interactive): 0.7 s
+
+FAILING/OPPORTUNITY AUDITS (<0.9 or fail):
+
+=== CATEGORY: Performance ===
+
+-> AUDIT: speed-index | Speed Index
+   Score: 0.59 | Mode: numeric | Value: 2.1 s
+
+-> AUDIT: cache-insight | Use efficient cache lifetimes
+   Score: 0.5 | Mode: metricSavings | Value: Est savings of 31 KiB
+   Items:
+     - {"url":"https://vercel.live/_next-live/feedback/feedback.js","cacheLifetimeMs":60000,"totalBytes":23081,"wastedBytes":22888.658333333333}
+     - {"url":"https://www.gstatic.com/eureka/clank/145/cast_sender.js","cacheLifetimeMs":86400000,"totalBytes":13417,"wastedBytes":5366.8}
+     - {"url":"https://image.mux.com/GfGuoz3XzlkvCzin9E6T00kdmsvsUvlUGnj9hw9K28e00/thumbnail.webp?time=0","cacheLifetimeMs":604800000,"totalBytes":39550,"wastedBytes":3954.999999999999}
+   Metric Savings: {"FCP":0,"LCP":0}
+
+-> AUDIT: lcp-discovery-insight | LCP request discovery
+   Score: 0 | Mode: numeric | Value: N/A
+   Items:
+     - {"type":"checklist","items":{"priorityHinted":{"label":"fetchpriority=high should be applied","value":false},"requestDiscoverable":{"label":"Request is discoverable in initial document","value":true},"eagerlyLoaded":{"label":"lazy load not applied","value":true}}}
+     - {"type":"node","lhId":"page-0-IMG","path":"1,HTML,2,BODY,6,HEADER,0,DIV,0,DIV,0,A,0,DIV,0,IMG","selector":"div.flex > a.flex > div.flex > img.h-12","boundingRect":{"top":12,"bottom":92,"left":119,"right":269,"width":150,"height":80},"snippet":"<img alt=\"Badran Hospital Logo\" width=\"64\" height=\"
+   Metric Savings: {"LCP":0}
+
+-> AUDIT: legacy-javascript-insight | Legacy JavaScript
+   Score: 0.5 | Mode: metricSavings | Value: Est savings of 14 KiB
+   Items:
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/023d923a37d494fc.js","wastedBytes":14037,"subItems":{"type":"subitems","items":[{"signal":"Array.prototype.at","location":{"type":"source-location","url":"https://badran-hospital.vercel.app/_next/static/chunks/023d923a37d494fc.js","urlPr
+   Metric Savings: {"FCP":0,"LCP":0}
+
+-> AUDIT: network-dependency-tree-insight | Network dependency tree
+   Score: 0 | Mode: numeric | Value: N/A
+   Items:
+     - {"type":"list-section","value":{"type":"network-tree","chains":{"79F807933764ACC3A4EAD4478A4AD015":{"url":"https://badran-hospital.vercel.app/en","navStartToEndTime":489,"transferSize":20632,"isLongest":true,"children":{"4176.696":{"url":"https://fonts.googleapis.com/css2?family=Inter:wght@100..900&
+     - {"type":"list-section","title":"Preconnected origins","description":"[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The fol
+     - {"type":"list-section","title":"Preconnect candidates","description":"Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.","value":{"type":"text","value":"No additional origins are good c
+   Metric Savings: {"LCP":0}
+
+-> AUDIT: render-blocking-insight | Render blocking requests
+   Score: 0.5 | Mode: metricSavings | Value: N/A
+   Items:
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/ede163e1c4ea0224.css","totalBytes":1292}
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/4c569dfc0ddeabb5.css","totalBytes":18424}
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/1fa5a90dd1068cb7.css","totalBytes":1330}
+   Metric Savings: {"FCP":0,"LCP":0}
+
+-> AUDIT: max-potential-fid | Max Potential First Input Delay
+   Score: 0.81 | Mode: numeric | Value: 160 ms
+
+-> AUDIT: unminified-javascript | Minify JavaScript
+   Score: 0.5 | Mode: metricSavings | Value: Est savings of 76 KiB
+   Savings: 0ms, 77642 bytes
+   Items:
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/globals-front.js","totalBytes":41764,"wastedBytes":19451,"wastedPercent":46.57469302612242}
+     - {"url":"chrome-extension://cgaocdmhkmfnkdkbnckgmpopcbpaaejo/library/libraries.js","totalBytes":22347,"wastedBytes":9134,"wastedPercent":40.87304517329474}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/polyfill.js","totalBytes":10890,"wastedBytes":5854,"wastedPercent":53.75151515151515}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/polyfill.js","totalBytes":10890,"wastedBytes":5854,"wastedPercent":53.75151515151515}
+     - {"url":"chrome-extension://kjheknompfelomdgfloikfbnjmaiflfe/content.js","totalBytes":13798,"wastedBytes":5768,"wastedPercent":41.8000047834302}
+     - {"url":"chrome-extension://jechbjkglifdaldbdbigibihfaclnkbo/bridge.js","totalBytes":15375,"wastedBytes":5560,"wastedPercent":36.162601626016254}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/vendor/@eyeo/webext-ad-filtering-solution/content-main.js","totalBytes":25968,"wastedBytes":5416,"wastedPercent":20.857266304071576}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/cookie-banner-detection.preload.js","totalBytes":10207,"wastedBytes":5415,"wastedPercent":53.05053509651137}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/adblock-picreplacement.js","totalBytes":9338,"wastedBytes":3895,"wastedPercent":41.71319527881829}
+     - {"url":"chrome-extension://jofhoojcehdmaiibilpcoofpdbbddkkl/js/page.js","totalBytes":11323,"wastedBytes":3541,"wastedPercent":31.270946871448135}
+     ... (3 more)
+   Metric Savings: {"FCP":0,"LCP":0}
+
+-> AUDIT: unused-javascript | Reduce unused JavaScript
+   Score: 0.5 | Mode: metricSavings | Value: Est savings of 4,792 KiB
+   Savings: 0ms, 4907230 bytes
+   Items:
+     - {"url":"chrome-extension://oldceeleldhonbafppcapldpdifcinji/content.js","totalBytes":1892291,"wastedBytes":1512218,"wastedPercent":79.91466428789231}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":501104,"wastedPercent":91.88316874818472}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":501104,"wastedPercent":91.88316874818472}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":501104,"wastedPercent":91.88316874818472}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":501104,"wastedPercent":91.88316874818472}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":501104,"wastedPercent":91.88316874818472}
+     - {"url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","totalBytes":545371,"wastedBytes":278217,"wastedPercent":51.0143164875593}
+     - {"url":"chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/vendor/@eyeo/webext-ad-filtering-solution/content.js","totalBytes":152577,"wastedBytes":139528,"wastedPercent":91.44771561307738}
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/2a8d6d7051c84304.js","totalBytes":159459,"wastedBytes":89169,"wastedPercent":55.91947582876601}
+     - {"url":"chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/Grammarly-check.js","totalBytes":145399,"wastedBytes":78515,"wastedPercent":53.999754880822145}
+     ... (7 more)
+   Metric Savings: {"FCP":0,"LCP":0}
+
+-> AUDIT: total-byte-weight | Avoid enormous network payloads
+   Score: 0.5 | Mode: metricSavings | Value: Total size was 7,237 KiB
+   Items:
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/LdxvyptbXfNmaoneJWt6QsFfaGi5LtZ48A4FS1CgxjgZKtbq6Z1Vhb3Oq6rb5DM02EraZ02jGT00htAaAAuPEMZPajIFe9y6IfL/1.m4s?skid=default&signature=NjlhNTVmYTBfNjRiMTMwOGQwMWQxMGQzYmQ5MTc5M2UwNTM2ODJjODA3YjlkZDBmMmQ4NWMxYzIxZTI4Y2RiNjFhMWFjMGRiYQ==&zo
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/d8k1GhFcLLByuZIxQxdzBncL9fD5lVriKnwoL7MHbGK2f9WjeI02L25u8xVPevPw99uErCmIvvIoBaltWa02m8avjioEYjCSz3/2.m4s?skid=default&signature=NjlhNTVmYTBfNDRhMTlmYjhjM2E5NTYxMmE1ZmY2NDQ2NDkzMzJkNmYzMjE0ZWI5Y2YyNDg5NDc4NGEwZjY3YzZiZjBmOGJjNw==&zon
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/cuwUWIwV8VUdDiKaJE5jVhyx7jkJ3dBLNDJ009mDTA8HJXQCNTxQPbXOEk00j2G00TA3hNFyjjY4Szp51ECAJ9LSCNzg00jXyGbu/0.m4s?skid=default&signature=NjlhNTVmYTBfOTY4MGQxMmQzYjE0MjNlNDc1MDMzMDA1Njc2YTFhYzUzOTdjMzllMTkxNzgwN2JkNTlhNWY5YjM0YmJiYjAxZg==&z
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/3W6S4Fpiq2EBr01B5xRGiO7100DWvUNM026oSnNIOFejKUhaWt9wFmejUwcIRf5nWxpNgRTPv02WHOSUdDmEYJRz02HETvKnKC939/3.m4s?skid=default&signature=NjlhNTVmYTBfNzIyYTI0ZGRjMzBjN2U2NmJiN2Y1NDUyYjZlZGM3N2FlNzllODJkNmM1M2I5ZjNkZGFjYjk2MTZlNDY5ZWJlOA==&
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/2a8d6d7051c84304.js","totalBytes":159639}
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/k01htPC6LwTuL1wqG01XT502L001LT01M01Zd67vs00sFP02PFmZQ00vgNZg1YTEJcZQsoxz202GFfD02kL3DBNKPhFdHV91TM2KBMHwsLJ/0.m4s?skid=default&signature=NjlhNTVmYTBfOTI1MDZhMGQ2OTRkYTlkOTE4NzQ2MjU4YzFhZWJjOWE2OTYxYzZlMDEzYjIxZGY4MjgzNjg5NTE0ZDY5YWE
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/NNZQ54TXU49WMKnpaGTz9U2ISh38AD5PUsckTDp5nuoo6wUo009PoBFFtjXQR02C2MqLy25QFHhhQCjwlvr5Ee7sV3W3un1D9O/2.m4s?skid=default&signature=NjlhNTVmYTBfZmY5Y2UxNmQ2ODg1MDIyN2MwNDg5YjE2ZmUwZDdmZjhkZTM2NzQ0ZDNhYjNiNmQ3MmJiZTNhYjAyMDBjMmY2NQ==&zon
+     - {"url":"https://chunk-oci-us-ashburn-1-vop1.fastly.mux.com/v1/chunk/lDkVpcumdLEhp00WiELeXTd8MzxI00VZJlxyNrUhBGZryBDZXO3K8x4niQ9Rugah00LX628h6AlV8jzLMoNAm93ESSfI9ErfgZT/1.m4s?skid=default&signature=NjlhNTVmYTBfMDQ1YjAzYzIzMjNhNWI4Njk4YmI5N2U2MDllNzg4MmQ0YTlhM2ZjZTg5MTVlZDEzMmRjNDYxYmFiMmU3ZTg2Yw==&zo
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/3c89bb77ef740c9f.js","totalBytes":82092}
+     - {"url":"https://badran-hospital.vercel.app/_next/static/chunks/07268b6b0972d023.js","totalBytes":77707}
+
+-> AUDIT: unsized-images | Image elements do not have explicit `width` and `height`
+   Score: 0.5 | Mode: metricSavings | Value: N/A
+   Items:
+     - {"url":"https://badran-hospital.vercel.app/dr.badran.webp","node":{"type":"node","lhId":"1-77-IMG","path":"1,HTML,2,BODY,7,MAIN,1,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,IMG","selector":"div.flex > div.w-full > div.relative > img.w-full","boundingRect":{"top":714,"bottom":1214,"left":127,"right":660,"widt
+   Metric Savings: {"CLS":0}
+
+-> AUDIT: bf-cache | Page prevented back/forward cache restoration
+   Score: 0 | Mode: binary | Value: 1 failure reason
+   Items:
+     - {"reason":"The page has an unload handler in the main frame.","failureType":"Actionable","subItems":{"type":"subitems","items":[{"frameUrl":"https://badran-hospital.vercel.app/en"}]},"protocolReason":"UnloadHandlerExistsInMainFrame"}
+
+-> AUDIT: server-response-time | Initial server response time was short
+   Score: 1 | Mode: metricSavings | Value: Root document took 100 ms
+   Savings: 3ms, 0 bytes
+   Items:
+     - {"url":"https://badran-hospital.vercel.app/en","responseTime":103}
+   Metric Savings: {"FCP":0,"LCP":0}
+
+=== CATEGORY: Accessibility ===
+
+-> AUDIT: color-contrast | Background and foreground colors do not have a sufficient contrast ratio.
+   Score: 0 | Mode: binary | Value: N/A
+   Items:
+     - {"node":{"type":"node","lhId":"1-0-BUTTON","path":"1,HTML,2,BODY,7,MAIN,0,SECTION,1,DIV,0,DIV,0,DIV,1,DIV,1,BUTTON","selector":"div.w-full > div.w-full > div.flex > button.w-full","boundingRect":{"top":486,"bottom":534,"left":1075,"right":1227,"width":152,"height":48},"snippet":"<button class=\"w-fu
+     - {"node":{"type":"node","lhId":"1-1-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":139,"right":439,"width":300,"height":20},"snippet":"<span class=\"
+     - {"node":{"type":"node","lhId":"1-3-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,1,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":503,"right":803,"width":300,"height":20},"snippet":"<span class=\"
+     - {"node":{"type":"node","lhId":"1-5-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,2,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":867,"right":1167,"width":300,"height":20},"snippet":"<span class=\
+     - {"node":{"type":"node","lhId":"1-7-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,3,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":1231,"right":1531,"width":300,"height":20},"snippet":"<span class=
+     - {"node":{"type":"node","lhId":"1-9-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,4,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":1595,"right":1895,"width":300,"height":20},"snippet":"<span class=
+     - {"node":{"type":"node","lhId":"1-11-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,5,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":1959,"right":2259,"width":300,"height":20},"snippet":"<span class
+     - {"node":{"type":"node","lhId":"1-13-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,6,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":2323,"right":2623,"width":300,"height":20},"snippet":"<span class
+     - {"node":{"type":"node","lhId":"1-15-SPAN","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,7,DIV,1,DIV,0,SPAN","selector":"div.flex > div.bg-card > div.p-4 > span.text-[#6B8D96]","boundingRect":{"top":3492,"bottom":3512,"left":2687,"right":2987,"width":300,"height":20},"snippet":"<span class
+
+-> AUDIT: target-size | Touch targets do not have sufficient size or spacing.
+   Score: 0 | Mode: binary | Value: N/A
+   Items:
+     - {"node":{"type":"node","lhId":"1-17-A","path":"1,HTML,2,BODY,7,MAIN,4,SECTION,0,DIV,1,DIV,0,DIV,7,DIV,1,DIV,2,DIV,0,A","selector":"div.bg-card > div.p-4 > div.mt-auto > a.text-[#12323A]","boundingRect":{"top":3592,"bottom":3612,"left":2687,"right":2762,"width":75,"height":20},"snippet":"<a class=\"t
+
+=== CATEGORY: Best Practices ===
+
+-> AUDIT: image-aspect-ratio | Displays images with incorrect aspect ratio
+   Score: 0 | Mode: binary | Value: N/A
+   Items:
+     - {"url":"https://badran-hospital.vercel.app/_next/image?url=%2Ficons%2Ficon-2.svg&w=48&q=75","node":{"type":"node","lhId":"1-76-IMG","path":"1,HTML,2,BODY,7,MAIN,0,SECTION,1,DIV,0,DIV,0,DIV,1,DIV,0,DIV,1,DIV,0,DIV,0,IMG","selector":"div.grid > div.flex > div.w-10 > img.w-6","boundingRect":{"top":496,
+
+-> AUDIT: deprecations | Uses deprecated APIs
+   Score: 0 | Mode: binary | Value: 2 warnings found
+   Items:
+     - {"value":"Unload event listeners are deprecated and will be removed.","source":{"type":"source-location","url":"chrome-extension://mbnbehikldjhnfehhnaidhjhoofhpehk/inspector.b9415ea5.js","urlProvider":"network","line":405,"column":2562},"subItems":{"type":"subitems","items":[{"type":"link","url":"ht
+     - {"value":"SharedStorage","source":{"type":"source-location","url":"chrome-extension://hoklmmgfnpapgjgcpechhaamimifchmp/frame/frame.js","urlProvider":"network","line":1,"column":90841}}
+
+-> AUDIT: third-party-cookies | Uses third-party cookies
+   Score: 0 | Mode: binary | Value: 4 cookies found
+   Items:
+     - {"name":"_mux_key","url":"https://image.mux.com/GfGuoz3XzlkvCzin9E6T00kdmsvsUvlUGnj9hw9K28e00/thumbnail.webp?time=0"}
+     - {"name":"_hp2_props.1410020921","url":"https://image.mux.com/GfGuoz3XzlkvCzin9E6T00kdmsvsUvlUGnj9hw9K28e00/thumbnail.webp?time=0"}
+     - {"name":"_hp2_id.1410020921","url":"https://image.mux.com/GfGuoz3XzlkvCzin9E6T00kdmsvsUvlUGnj9hw9K28e00/thumbnail.webp?time=0"}
+     - {"name":"_vcid","url":"https://vercel.live/_next-live/feedback/feedback.js"}
+
+-> AUDIT: inspector-issues | Issues were logged in the `Issues` panel in Chrome Devtools
+   Score: 0 | Mode: binary | Value: N/A
+   Items:
+     - {"issueType":"Cookie","subItems":{"type":"subitems","items":[{"url":"https://image.mux.com/GfGuoz3XzlkvCzin9E6T00kdmsvsUvlUGnj9hw9K28e00/thumbnail.webp?time=0"},{"url":"https://vercel.live/_next-live/feedback/feedback.js"},{"url":"https://vercel.live/_next-live/feedback/feedback.html?dpl=dpl_3cXdGEM
+
+=== CATEGORY: SEO ===
+
+-> AUDIT: link-text | Links do not have descriptive text
+   Score: 0 | Mode: binary | Value: 10 links found
+   Items:
+     - {"href":"https://badran-hospital.vercel.app/en/center-of-excellence","text":"SEE MORE","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/center-of-excellence","text":"SEE MORE","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/when-to-go-to-er-for-chest-pain","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/dangerous-headache-warning-signs","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/silent-heart-attack-symptoms","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/causes-of-sudden-dizziness","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/mediastinal-mass-causes","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/heart-checkup-frequency-by-age","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/early-signs-of-breast-cancer","text":"Learn more","textLang":"en"}
+     - {"href":"https://badran-hospital.vercel.app/en/health-hub/colon-cancer-early-signs","text":"Learn more","textLang":"en"}
+
+-> AUDIT: robots-txt | robots.txt is not valid
+   Score: 0 | Mode: binary | Value: 1 error found
+   Items:
+     - {"index":"1","line":"<meta name=\"robots\" content=\"noindex\"/><script src=\"/_next/static/chunks/a6dad97d9634a72d.js\" noModule=\"\"></script><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/043b82ab3

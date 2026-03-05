@@ -1,7 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
+import { HealthHubCarousel, CarouselPost } from "./health-hub-carousel";
 import { fetchStrapi, getStrapiMediaUrl } from "@/lib/strapi";
 
 type HealthHubDict = {
@@ -145,6 +144,23 @@ export async function HealthHub({
       ? strapiData.data
       : PLACEHOLDER_POSTS;
 
+  const carouselPosts: CarouselPost[] = posts.map((post) => {
+    const imageUrl =
+      getStrapiMediaUrl(
+        post.banner?.formats?.medium?.url || post.banner?.url || null,
+      ) || "/health-hub/post-1.webp";
+
+    return {
+      id: post.id,
+      title: post.title,
+      specialties: post.specialties,
+      kind: post.kind,
+      imageUrl: imageUrl,
+      date: formatDate(post.publishedAt, lang),
+      href: `/${lang}/health-hub/${post.slug || post.documentId}`,
+    };
+  });
+
   return (
     <section className="py-12 md:py-20 bg-linear-to-b from-[#86BBF1]/50 to-[#D2EAEF]/50">
       <div className="container mx-auto px-4 md:px-6">
@@ -171,77 +187,11 @@ export async function HealthHub({
           </Link>
         </div>
 
-        {/* Scrollable Cards */}
-        <div className="relative">
-          <div
-            className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:gap-6 md:pb-6"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {posts.map((post) => {
-              const imageUrl =
-                getStrapiMediaUrl(
-                  post.banner?.formats?.medium?.url || post.banner?.url || null,
-                ) || "/health-hub/post-1.webp";
-
-              const date = formatDate(post.publishedAt, lang);
-              const href = `/${lang}/health-hub/${post.slug || post.documentId}`;
-
-              return (
-                <Card
-                  key={post.id}
-                  className="shrink-0 w-[85vw] sm:w-[340px] snap-center p-0 gap-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full border-none"
-                >
-                  {/* Image */}
-                  <div className="relative h-[200px] md:h-[220px] overflow-hidden bg-gray-100">
-                    <Image
-                      src={imageUrl || "/health-hub/post-1.webp"}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 640px) 85vw, 340px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      priority={false}
-                    />
-                    {/* Category Badge */}
-                    {post.specialties && (
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#388AA3] capitalize">
-                        {post.specialties}
-                      </div>
-                    )}
-                    {/* Kind Badge */}
-                    {post.kind && (
-                      <div className="absolute top-4 right-4 bg-[#0FA5A1]/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest text-white uppercase">
-                        {post.kind.toUpperCase()}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-4 md:p-5 flex flex-col grow">
-                    {/* Date */}
-                    <span className="text-[#6B8D96] text-xs md:text-sm mb-3 block">
-                      {date}
-                    </span>
-
-                    {/* Title */}
-                    <h3 className="text-[#12323A] font-semibold text-lg leading-tight mb-3 line-clamp-2 hover:text-[#0FA5A1] transition-colors">
-                      <Link href={href}>{post.title}</Link>
-                    </h3>
-
-                    {/* Learn More */}
-                    <div className="mt-auto pt-2">
-                      <Link
-                        href={href}
-                        className="text-[#12323A] text-sm font-medium underline hover:text-[#0FA5A1] transition-colors inline-flex items-center gap-1"
-                      >
-                        {dict.learnMore}
-                      </Link>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
+        <HealthHubCarousel
+          posts={carouselPosts}
+          dict={{ learnMore: dict.learnMore }}
+          lang={lang}
+        />
       </div>
     </section>
   );

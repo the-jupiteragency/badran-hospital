@@ -115,9 +115,21 @@ export function Footer({ dict, lang }: { dict: FooterDict; lang: string }) {
                 >
                   19986
                 </Link>
-                <span>/</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/icons/footerwhatsapp.svg"
+                alt="Phone"
+                width={26}
+                height={26}
+                className="shrink-0"
+              />
+              <div className="flex flex-wrap gap-1 text-[#1A3B5C]" dir="ltr">
                 <Link
-                  href="tel:+201029640837"
+                  href="https://wa.me/201029640837"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#0097A7] transition-colors whitespace-nowrap"
                 >
                   +2 0102 964 0837

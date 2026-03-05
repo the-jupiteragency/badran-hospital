@@ -85,7 +85,7 @@ export function WeOfferSec({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[#274760] text-3xl md:text-5xl lg:text-6xl font-medium  max-w-2xl mx-auto"
+            className="text-[#274760] text-3xl md:text-5xl lg:text-6xl font-medium  max-w-2xl mx-auto leading-relaxed"
           >
             {dict.title}
           </motion.h2>

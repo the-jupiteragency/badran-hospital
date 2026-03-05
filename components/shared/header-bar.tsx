@@ -58,7 +58,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
         isOpen
           ? "bg-[#0E7C7B]"
           : isScrolled
-            ? "bg-linear-to-br from-[#008DC3] to-[#004268] shadow-lg"
+            ? "bg-[#E2F0F7] shadow-lg"
             : "bg-[#E2F0F7]"
       }`}
     >
@@ -68,9 +68,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
           <Link href={`/${lang}`} className="flex items-center">
             <div className="flex flex-col items-center">
               <Image
-                src={
-                  isScrolled || isOpen ? "/icons/logo.svg" : "/icons/d-logo.svg"
-                }
+                src={isOpen ? "/icons/logo.svg" : "/icons/d-logo.svg"}
                 alt="Badran Hospital Logo"
                 width={64}
                 height={64}
@@ -86,11 +84,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
               <Link
                 key={link.label}
                 href={link.href}
-                className={` text-sm md:text-md xl:text-lg font-semibold transition-colors whitespace-nowrap text-ellipsis ${
-                  isScrolled
-                    ? "text-white hover:text-white/80"
-                    : " text-[#274760] hover:text-[#0066A2]/80"
-                }`}
+                className={` text-sm md:text-md xl:text-lg font-semibold transition-colors whitespace-nowrap text-ellipsis text-[#274760] hover:text-[#0066A2]/80`}
               >
                 {link.label}
               </Link>
@@ -100,11 +94,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
           {/* Language Selector - Desktop */}
           <Link
             href={getLocalizedPath(lang === "en" ? "ar" : "en")}
-            className={`hidden lg:flex items-center gap-2  ${
-              isScrolled
-                ? "text-white hover:text-white/80"
-                : " text-[#274760] hover:text-[#0066A2]/80"
-            }`}
+            className={`hidden lg:flex items-center gap-2 text-[#274760] hover:text-[#0066A2]/80`}
           >
             <span className="text-sm font-medium">{dict.language}</span>
           </Link>
@@ -115,7 +105,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
             <Link
               href={getLocalizedPath(lang === "en" ? "ar" : "en")}
               className={`text-sm font-bold transition-colors ${
-                isScrolled || isOpen
+                isOpen
                   ? "text-white hover:text-white/80"
                   : "text-[#274760] hover:text-[#0066A2]/80"
               }`}
@@ -127,7 +117,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: NavDict }) {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 transition-colors ${
-                isScrolled || isOpen ? "text-white" : "text-[#274760]"
+                isOpen ? "text-white" : "text-[#274760]"
               }`}
               aria-label="Toggle menu"
             >

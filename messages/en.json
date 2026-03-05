@@ -7,18 +7,18 @@
     "healthHub": "Health Hub",
     "contact": "Contact us",
     "viewAll": "View all",
-    "language": "EN"
+    "language": "AR"
   },
   "home": {
     "hero": {
-      "searchPlaceholder": "Search for doctors, Specializations...",
+      "searchPlaceholder": "Search for doctors, specialties...",
       "speciality": "Speciality",
       "doctor": "Doctor",
       "bookNow": "Book Now"
     },
 
     "about": {
-      "quote": "Professor Dr. Ibrahim Badran (1924–2015) was a pioneering Egyptian surgeon and academic. He served as Egypt's Minister of Health (1976–1978) and President of Cairo University (1978–1980). Renowned as the \"father of surgery in Egypt,\" he authored seven books and over 120 scientific papers.",
+      "quote": "Badran Hospital was founded by Prof. Dr. Ibrahim Gamil Badran, a distinguished physician, academic leader, and national figure. He served as Minister of Health of Egypt, Dean of the Faculty of Medicine at Cairo University, and later as President of Cairo University Professor Badran is widely recognized for his extensive scientific contributions and numerous medical publications that have enriched medical education and healthcare development in Egypt and beyond.",
       "buttonText": "About Us"
     },
     "coe": {
@@ -35,13 +35,12 @@
           "services": [
             "ECG, <strong>Echocardiography</strong> & Stress Tests",
             "<strong>Holter Monitoring</strong> (24–48 hours)",
-            "<strong>CT Coronary</strong> Angiography",
+            "Treatment of <strong>arrhythmias & hypertension</strong>",
             "Cardiac <strong>Catheterization</strong> (Cath Lab)",
             "Management of <strong>coronary artery disease</strong>",
-            "Treatment of <strong>arrhythmias & hypertension</strong>",
+            "<strong>Long-term follow-up</strong> and prevention programs",
             "<strong>Heart failure</strong> & valve disease management",
-            "<strong>Emergency</strong> chest pain care",
-            "<strong>Long-term follow-up</strong> and prevention programs"
+            "<strong>Emergency</strong> chest pain care"
           ]
         },
         "oncology": {
@@ -178,7 +177,7 @@
   "about": {
     "hero": {
       "subtitle": "Where expertise meets advanced care.",
-      "title": "Excellence of Healthcare",
+      "title": "Healthcare Excellence",
       "description": "Badran Hospital delivers trusted medical care with clinical excellence and personalized attention in the heart of Dokki, Cairo.",
       "stats": {
         "iso": {
@@ -198,6 +197,10 @@
           "subtitle": "Care"
         }
       }
+    },
+    "founder": {
+      "title": "A Life of Healing and Leadership",
+      "description": "Badran Hospital was founded by Prof. Dr. Ibrahim Gamil Badran, a distinguished physician, academic leader, and national figure. He served as Minister of Health of Egypt, Dean of the Faculty of Medicine at Cairo University, and later as President of Cairo University. Professor Badran is widely recognized for his extensive scientific contributions and numerous medical publications that have enriched medical education and healthcare development in Egypt and beyond."
     },
     "journey": {
       "subtitle": "Our Journey",

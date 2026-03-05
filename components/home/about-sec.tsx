@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -22,25 +23,26 @@ export function AboutSection({
           {/* Image Side */}
           <div className="w-full md:w-1/2">
             <div className="relative rounded-md overflow-hidden">
-              <img
+              <Image
                 src="/dr.badran.webp"
                 alt="Dr. Badran"
+                width={700}
+                height={700}
                 className="w-full h-auto object-contain md:min-h-[500px]"
+                priority
               />
             </div>
           </div>
 
           {/* Text Side */}
-          <div className="w-full md:w-[58%] flex flex-col items-center md:items-start gap-6 md:gap-8">
+          <div className="w-full md:w-[62%] flex flex-col items-center md:items-start gap-6 md:gap-8 text-justify ">
             <div className="relative">
               <p
-                className={`text-[#063458] text-lg md:text-2xl lg:text-3xl leading-normal tracking-wide font-mono text-balance ${
+                className={`text-[#063458] text-lg md:text-xl lg:text-2xl leading-normal tracking-wide font-mono  ${
                   lang === "ar" ? "md:text-right" : "md:text-left"
                 }`}
               >
-                {lang === "ar"
-                  ? dict.quote
-                  : `Professor Dr. Ibrahim Badran (1924–2015) was a pioneering Egyptian surgeon and academic. He served as Egypt’s Minister of Health (1976–1978) and President of Cairo University (1978–1980). Renowned as the “father of surgery in Egypt,” he authored seven books and over 120 scientific papers.`}
+                {dict.quote}
               </p>
             </div>
 

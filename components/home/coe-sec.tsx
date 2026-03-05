@@ -139,7 +139,7 @@ export function CenterOfExcellence({
                       />
                     </div>
                     {/* Title Bottom Left */}
-                    <h3 className="text-white font-bold text-sm md:text-lg xl:text-xl whitespace-nowrap text-ellipsis">
+                    <h3 className="text-white font-bold text-sm md:text-lg xl:text-md whitespace-nowrap text-ellipsis">
                       {specialty.title}
                     </h3>
                   </div>

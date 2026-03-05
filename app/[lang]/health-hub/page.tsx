@@ -68,7 +68,7 @@ export default async function HealthHubPage({
     <div className="min-h-screen pt-16 md:pt-20 bg-[#DCEEFA]">
       {/* Hero Header */}
       <div className="pt-10 md:pt-20 lg:px-12 ">
-        <div className="mx-auto max-w-7xl px-4 md:px-2 ">
+        <div className="mx-auto max-w-6xl px-4 md:px-2 ">
           <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-[#063458]">
             {dict.healthHub.title}
           </h1>

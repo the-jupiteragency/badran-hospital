@@ -77,10 +77,10 @@ export const HealthStepSec = ({ dict, lang }: HealthStepSecProps) => {
     >
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center mb-16 space-y-4">
-          <span className="text-[#388AA3] font-medium tracking-wide uppercase text-sm md:text-base">
+          <span className="text-[#388AA3] font-medium tracking-normal uppercase text-sm md:text-base">
             {dict.subtitle}
           </span>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium  max-w-2xl mx-auto text-[#274760]">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium  max-w-2xl mx-auto text-[#274760] leading-relaxed">
             {dict.title}
           </h2>
         </div>
@@ -100,7 +100,7 @@ export const HealthStepSec = ({ dict, lang }: HealthStepSecProps) => {
                 "absolute top-[30px] h-full pointer-events-none z-0",
                 isAr
                   ? "right-[48px] left-[calc(20%-48px)]"
-                  : "left-[70px] right-[calc(20%-48px)]"
+                  : "left-[70px] right-[calc(20%-48px)]",
               )}
             >
               {/* Animated Line */}
@@ -108,7 +108,7 @@ export const HealthStepSec = ({ dict, lang }: HealthStepSecProps) => {
                 variants={lineVariants}
                 className={cn(
                   "absolute top-0 h-[2px] bg-[#0499AB]",
-                  isAr ? "right-0" : "left-0"
+                  isAr ? "right-0" : "left-0",
                 )}
               />
             </div>
@@ -126,7 +126,7 @@ export const HealthStepSec = ({ dict, lang }: HealthStepSecProps) => {
                   <div
                     className={cn(
                       "absolute top-2 w-[64px] h-[64px] z-10 ",
-                      isAr ? "right-4" : "left-4"
+                      isAr ? "right-4" : "left-4",
                     )}
                   >
                     <Image
